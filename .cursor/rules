@@ -10,6 +10,13 @@
    - ESTUDIA cómo se comportan y qué contenido exacto tienen los archivos equivalentes
    - LEE los README completos: `./domain-driven-hexagon/README.md` y `./backend-best-practices/README.md`
 
+## UBICACIÓN DE DESARROLLO
+
+**TODA la aplicación se desarrolla en `./domain-driven-hexagon/src/` utilizando la infraestructura existente:**
+- Crear nuevos módulos en `./domain-driven-hexagon/src/modules/`
+- Utilizar la infraestructura existente en `./domain-driven-hexagon/src/libs/`
+- NO crear duplicados en `./src/` - trabajar directamente en el repositorio clonado
+
 2. **REPLICACIÓN EXACTA**:
    - COPIA la estructura y patrones exactos de los repositorios de referencia
    - MANTÉN el mismo tipo de contenido, imports, y estructura de clases/funciones
