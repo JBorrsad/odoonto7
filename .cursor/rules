@@ -1,0 +1,38 @@
+# REGLAS CRÍTICAS PARA EL DESARROLLO DE LA APLICACIÓN
+
+## PROCESO OBLIGATORIO ANTES DE CUALQUIER CAMBIO
+
+**ANTES de crear o modificar CUALQUIER archivo en esta aplicación:**
+
+1. **ANÁLISIS EXHAUSTIVO OBLIGATORIO**:
+   - EXAMINA la estructura exacta de archivos en `./domain-driven-hexagon/`
+   - REVISA el contenido específico de archivos similares en los repositorios de referencia
+   - ESTUDIA cómo se comportan y qué contenido exacto tienen los archivos equivalentes
+   - LEE los README completos: `./domain-driven-hexagon/README.md` y `./backend-best-practices/README.md`
+
+2. **REPLICACIÓN EXACTA**:
+   - COPIA la estructura y patrones exactos de los repositorios de referencia
+   - MANTÉN el mismo tipo de contenido, imports, y estructura de clases/funciones
+   - SIGUE los mismos patrones de naming y organización de código
+   - USA los mismos tipos de validaciones y manejo de errores que ves en los ejemplos
+
+3. **RESTRICCIÓN ABSOLUTA**:
+   - SOLO implementa exactamente lo que el usuario te pide explícitamente
+   - NO añadas atributos, propiedades o funcionalidades extra que no hayan sido solicitadas
+   - NO inventes datos, campos o comportamientos adicionales
+   - NO asumas funcionalidades que no han sido especificadas claramente
+
+4. **VERIFICACIÓN ANTES DE IMPLEMENTAR**:
+   - Compara tu código planeado con los ejemplos de los repositorios
+   - Asegúrate de que sigues exactamente los patrones demostrados
+   - Verifica que no estás añadiendo nada no solicitado
+   - Confirma que el comportamiento es idéntico al de los ejemplos
+
+**NUNCA generes código sin este análisis previo. Es CRÍTICO seguir exactamente los patrones establecidos.**
+
+## PROHIBICIONES
+
+- NO crear archivos sin seguir la estructura de capas definida
+- NO ignorar los patrones DDD establecidos
+- NO generar código sin validaciones apropiadas
+- NO omitir la separación de responsabilidades por capas 
