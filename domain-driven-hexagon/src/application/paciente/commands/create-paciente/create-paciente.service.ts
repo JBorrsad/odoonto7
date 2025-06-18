@@ -31,6 +31,10 @@ export class CreatePacienteService
       email: command.email,
       alergias: command.alergias,
       notas: command.notas,
+      medicacion: command.medicacion,
+      patologiasMedicas: command.patologiasMedicas,
+      embarazada: command.embarazada,
+      hemorragiasDentales: command.hemorragiasDentales,
       address: new Address({
         country: command.country,
         postalCode: command.postalCode,

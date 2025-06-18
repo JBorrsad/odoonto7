@@ -7,7 +7,9 @@ import {
   Min,
   Max,
   Matches,
+  IsEnum,
 } from 'class-validator';
+import { Sexo } from '@src/domain/paciente/paciente.types';
 
 export class UpdatePacienteDatosRequestDto {
   @ApiProperty({
@@ -44,12 +46,12 @@ export class UpdatePacienteDatosRequestDto {
   readonly edad?: number;
 
   @ApiProperty({
-    example: 'Masculino',
+    example: Sexo.HOMBRE,
     description: 'Sexo del paciente',
+    enum: Sexo,
     required: false,
   })
   @IsOptional()
-  @MaxLength(20)
-  @IsString()
-  readonly sexo?: string;
+  @IsEnum(Sexo)
+  readonly sexo?: Sexo;
 }

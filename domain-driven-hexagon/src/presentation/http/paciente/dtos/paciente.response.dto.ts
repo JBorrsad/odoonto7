@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ResponseBase } from '@src/shared/api/response.base';
+import { Sexo } from '@src/domain/paciente/paciente.types';
 
 export class PacienteResponseDto extends ResponseBase {
   @ApiProperty({
@@ -21,10 +22,11 @@ export class PacienteResponseDto extends ResponseBase {
   edad: number;
 
   @ApiProperty({
-    example: 'Masculino',
+    example: Sexo.HOMBRE,
     description: 'Sexo del paciente',
+    enum: Sexo,
   })
-  sexo: string;
+  sexo: Sexo;
 
   @ApiProperty({
     example: '+34612345678',
@@ -49,6 +51,31 @@ export class PacienteResponseDto extends ResponseBase {
     description: 'Notas del paciente',
   })
   notas: string;
+
+  @ApiProperty({
+    example: 'Omeprazol 20mg cada 12h, Ibuprofeno 600mg si dolor',
+    description: 'Medicación actual del paciente',
+  })
+  medicacion: string;
+
+  @ApiProperty({
+    example: 'Hipertensión arterial, diabetes tipo 2',
+    description: 'Patologías médicas del paciente',
+  })
+  patologiasMedicas: string;
+
+  @ApiProperty({
+    example: false,
+    description: 'Estado de embarazo (solo para mujeres)',
+    required: false,
+  })
+  embarazada?: boolean;
+
+  @ApiProperty({
+    example: false,
+    description: 'Historial de hemorragias dentales en extracciones',
+  })
+  hemorragiasDentales: boolean;
 
   @ApiProperty({
     example: 'España',

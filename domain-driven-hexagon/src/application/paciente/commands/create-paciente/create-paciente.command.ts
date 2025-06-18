@@ -1,14 +1,19 @@
 import { Command, CommandProps } from '@src/shared/ddd';
+import { Sexo } from '@src/domain/paciente/paciente.types';
 
 export class CreatePacienteCommand extends Command {
   readonly nombre: string;
   readonly apellidos: string;
   readonly edad: number;
-  readonly sexo: string;
+  readonly sexo: Sexo;
   readonly telefono: string;
   readonly email: string;
   readonly alergias: string;
   readonly notas: string;
+  readonly medicacion: string;
+  readonly patologiasMedicas: string;
+  readonly embarazada?: boolean;
+  readonly hemorragiasDentales: boolean;
   readonly country: string;
   readonly postalCode: string;
   readonly street: string;
@@ -23,6 +28,10 @@ export class CreatePacienteCommand extends Command {
     this.email = props.email;
     this.alergias = props.alergias;
     this.notas = props.notas;
+    this.medicacion = props.medicacion;
+    this.patologiasMedicas = props.patologiasMedicas;
+    this.embarazada = props.embarazada;
+    this.hemorragiasDentales = props.hemorragiasDentales;
     this.country = props.country;
     this.postalCode = props.postalCode;
     this.street = props.street;

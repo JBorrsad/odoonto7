@@ -10,18 +10,18 @@ import { routesV1 } from '@src/config/app.routes';
 import { CommandBus } from '@nestjs/cqrs';
 import { match, Result } from 'oxide.ts';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { UpdatePacienteAddressCommand } from '@src/application/paciente/commands/update-paciente-address/update-paciente-address.command';
-import { UpdatePacienteAddressRequestDto } from '@src/presentation/http/paciente/commands/update-paciente-address.request.dto';
+import { UpdatePacienteHemorragiasCommand } from '@src/application/paciente/commands/update-paciente-hemorragias/update-paciente-hemorragias.command';
+import { UpdatePacienteHemorragiasRequestDto } from './commands/update-paciente-hemorragias.request.dto';
 import { AggregateID } from '@src/shared/ddd';
 import { NotFoundException } from '@src/shared/exceptions';
 import { ApiErrorResponse } from '@src/shared/api/api-error.response';
 import { IdResponse } from '@src/shared/api/id.response.dto';
 
 @Controller(routesV1.version)
-export class UpdatePacienteAddressHttpController {
+export class UpdatePacienteHemorragiasHttpController {
   constructor(private readonly commandBus: CommandBus) {}
 
-  @ApiOperation({ summary: 'Update paciente address' })
+  @ApiOperation({ summary: 'Update paciente hemorragias dentales' })
   @ApiResponse({
     status: HttpStatus.OK,
     type: IdResponse,
@@ -31,12 +31,12 @@ export class UpdatePacienteAddressHttpController {
     description: NotFoundException.message,
     type: ApiErrorResponse,
   })
-  @Patch(`${routesV1.paciente.root}/:id/address`)
-  async updateAddress(
+  @Patch(`${routesV1.paciente.root}/:id/hemorragias`)
+  async updateHemorragias(
     @Param('id') pacienteId: string,
-    @Body() request: UpdatePacienteAddressRequestDto,
+    @Body() request: UpdatePacienteHemorragiasRequestDto,
   ): Promise<IdResponse> {
-    const command = new UpdatePacienteAddressCommand({
+    const command = new UpdatePacienteHemorragiasCommand({
       pacienteId,
       ...request,
     });
@@ -52,4 +52,4 @@ export class UpdatePacienteAddressHttpController {
       },
     });
   }
-}
+} 

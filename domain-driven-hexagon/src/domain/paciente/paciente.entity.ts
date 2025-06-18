@@ -5,6 +5,10 @@ import { PacienteContactoUpdatedDomainEvent } from './events/paciente-contacto-u
 import { PacienteDatosUpdatedDomainEvent } from './events/paciente-datos-updated.domain-event';
 import { PacienteAlergiasUpdatedDomainEvent } from './events/paciente-alergias-updated.domain-event';
 import { PacienteNotasUpdatedDomainEvent } from './events/paciente-notas-updated.domain-event';
+import { PacienteMedicacionUpdatedDomainEvent } from './events/paciente-medicacion-updated.domain-event';
+import { PacientePatologiasUpdatedDomainEvent } from './events/paciente-patologias-updated.domain-event';
+import { PacienteEmbarazadaUpdatedDomainEvent } from './events/paciente-embarazada-updated.domain-event';
+import { PacienteHemorragiasUpdatedDomainEvent } from './events/paciente-hemorragias-updated.domain-event';
 import { PacienteDeletedDomainEvent } from './events/paciente-deleted.domain-event';
 import { Address, AddressProps } from './value-objects/address.value-object';
 import {
@@ -15,6 +19,11 @@ import {
   UpdatePacienteDatosProps,
   UpdatePacienteAlergiasProps,
   UpdatePacienteNotasProps,
+  UpdatePacienteMedicacionProps,
+  UpdatePacientePatologiasProps,
+  UpdatePacienteEmbarazadaProps,
+  UpdatePacienteHemorragiasProps,
+  Sexo,
 } from './paciente.types';
 import { randomUUID } from 'crypto';
 
@@ -23,7 +32,10 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
 
   static create(create: CreatePacienteProps): PacienteEntity {
     const id = randomUUID();
-    const props: PacienteProps = { ...create };
+    const props: PacienteProps = {
+      ...create,
+      embarazada: create.sexo === Sexo.MUJER ? create.embarazada : undefined,
+    };
     const paciente = new PacienteEntity({ id, props });
 
     paciente.addEvent(
@@ -37,6 +49,10 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
         email: props.email,
         alergias: props.alergias,
         notas: props.notas,
+        medicacion: props.medicacion,
+        patologiasMedicas: props.patologiasMedicas,
+        embarazada: props.embarazada,
+        hemorragiasDentales: props.hemorragiasDentales,
         ...props.address.unpack(),
       }),
     );
@@ -55,7 +71,7 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     return this.props.edad;
   }
 
-  get sexo(): string {
+  get sexo(): Sexo {
     return this.props.sexo;
   }
 
@@ -73,6 +89,22 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
 
   get notas(): string {
     return this.props.notas;
+  }
+
+  get medicacion(): string {
+    return this.props.medicacion;
+  }
+
+  get patologiasMedicas(): string {
+    return this.props.patologiasMedicas;
+  }
+
+  get embarazada(): boolean | undefined {
+    return this.props.embarazada;
+  }
+
+  get hemorragiasDentales(): boolean {
+    return this.props.hemorragiasDentales;
   }
 
   delete(): void {
@@ -130,6 +162,9 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     }
     if (props.sexo !== undefined) {
       this.props.sexo = props.sexo;
+      if (props.sexo === Sexo.HOMBRE) {
+        this.props.embarazada = undefined;
+      }
     }
 
     this.addEvent(
@@ -165,7 +200,60 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     );
   }
 
+  updateMedicacion(props: UpdatePacienteMedicacionProps): void {
+    this.props.medicacion = props.medicacion;
+
+    this.addEvent(
+      new PacienteMedicacionUpdatedDomainEvent({
+        aggregateId: this.id,
+        medicacion: this.props.medicacion,
+      }),
+    );
+  }
+
+  updatePatologias(props: UpdatePacientePatologiasProps): void {
+    this.props.patologiasMedicas = props.patologiasMedicas;
+
+    this.addEvent(
+      new PacientePatologiasUpdatedDomainEvent({
+        aggregateId: this.id,
+        patologiasMedicas: this.props.patologiasMedicas,
+      }),
+    );
+  }
+
+  updateEmbarazada(props: UpdatePacienteEmbarazadaProps): void {
+    if (this.props.sexo !== Sexo.MUJER) {
+      throw new Error('Solo las mujeres pueden tener el campo embarazada');
+    }
+
+    this.props.embarazada = props.embarazada;
+
+    this.addEvent(
+      new PacienteEmbarazadaUpdatedDomainEvent({
+        aggregateId: this.id,
+        embarazada: this.props.embarazada,
+      }),
+    );
+  }
+
+  updateHemorragias(props: UpdatePacienteHemorragiasProps): void {
+    this.props.hemorragiasDentales = props.hemorragiasDentales;
+
+    this.addEvent(
+      new PacienteHemorragiasUpdatedDomainEvent({
+        aggregateId: this.id,
+        hemorragiasDentales: this.props.hemorragiasDentales,
+      }),
+    );
+  }
+
   validate(): void {
-    // entity business rules validation to protect it's invariant before saving entity to a database
+    if (
+      this.props.sexo === Sexo.HOMBRE &&
+      this.props.embarazada !== undefined
+    ) {
+      throw new Error('Los hombres no pueden tener el campo embarazada');
+    }
   }
 }

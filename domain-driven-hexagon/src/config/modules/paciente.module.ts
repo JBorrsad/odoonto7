@@ -14,6 +14,14 @@ import { UpdatePacienteAlergiasHttpController } from '@src/presentation/http/pac
 import { UpdatePacienteAlergiasService } from '@src/application/paciente/commands/update-paciente-alergias/update-paciente-alergias.service';
 import { UpdatePacienteNotasHttpController } from '@src/presentation/http/paciente/update-paciente-notas.http.controller';
 import { UpdatePacienteNotasService } from '@src/application/paciente/commands/update-paciente-notas/update-paciente-notas.service';
+import { UpdatePacienteMedicacionHttpController } from '@src/presentation/http/paciente/update-paciente-medicacion.http.controller';
+import { UpdatePacienteMedicacionService } from '@src/application/paciente/commands/update-paciente-medicacion/update-paciente-medicacion.service';
+import { UpdatePacientePatologiasHttpController } from '@src/presentation/http/paciente/update-paciente-patologias.http.controller';
+import { UpdatePacientePatologiasService } from '@src/application/paciente/commands/update-paciente-patologias/update-paciente-patologias.service';
+import { UpdatePacienteEmbarazadaHttpController } from '@src/presentation/http/paciente/update-paciente-embarazada.http.controller';
+import { UpdatePacienteEmbarazadaService } from '@src/application/paciente/commands/update-paciente-embarazada/update-paciente-embarazada.service';
+import { UpdatePacienteHemorragiasHttpController } from '@src/presentation/http/paciente/update-paciente-hemorragias.http.controller';
+import { UpdatePacienteHemorragiasService } from '@src/application/paciente/commands/update-paciente-hemorragias/update-paciente-hemorragias.service';
 import { FindPacientesHttpController } from '@src/presentation/http/paciente/find-pacientes.http.controller';
 import { FindPacientesQueryHandler } from '@src/application/paciente/queries/find-pacientes/find-pacientes.query-handler';
 import { PacienteMapper } from '@src/infrastructure/database/paciente/paciente.mapper';
@@ -28,6 +36,10 @@ const httpControllers = [
   UpdatePacienteDatosHttpController,
   UpdatePacienteAlergiasHttpController,
   UpdatePacienteNotasHttpController,
+  UpdatePacienteMedicacionHttpController,
+  UpdatePacientePatologiasHttpController,
+  UpdatePacienteEmbarazadaHttpController,
+  UpdatePacienteHemorragiasHttpController,
   FindPacientesHttpController,
 ];
 
@@ -39,6 +51,10 @@ const commandHandlers: Provider[] = [
   UpdatePacienteDatosService,
   UpdatePacienteAlergiasService,
   UpdatePacienteNotasService,
+  UpdatePacienteMedicacionService,
+  UpdatePacientePatologiasService,
+  UpdatePacienteEmbarazadaService,
+  UpdatePacienteHemorragiasService,
 ];
 
 const queryHandlers: Provider[] = [FindPacientesQueryHandler];

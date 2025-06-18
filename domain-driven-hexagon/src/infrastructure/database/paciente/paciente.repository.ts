@@ -7,6 +7,7 @@ import { PacienteEntity } from '@src/domain/paciente/paciente.entity';
 import { SqlRepositoryBase } from '@src/shared/db/sql-repository.base';
 import { Injectable, Logger } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
+import { Sexo } from '@src/domain/paciente/paciente.types';
 
 export const pacienteSchema = z.object({
   id: z.string().uuid(),
@@ -15,11 +16,15 @@ export const pacienteSchema = z.object({
   nombre: z.string().min(1).max(50),
   apellidos: z.string().min(1).max(100),
   edad: z.number().min(0).max(120),
-  sexo: z.string().min(1).max(20),
+  sexo: z.nativeEnum(Sexo),
   telefono: z.string().min(1).max(20),
   email: z.string().email(),
   alergias: z.string().max(500),
   notas: z.string().max(1000),
+  medicacion: z.string(),
+  patologiasMedicas: z.string(),
+  embarazada: z.boolean().nullable(),
+  hemorragiasDentales: z.boolean(),
   country: z.string().min(1).max(50),
   postalCode: z.string().min(1).max(10),
   street: z.string().min(1).max(100),

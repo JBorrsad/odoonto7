@@ -5,15 +5,20 @@ CREATE TABLE "pacientes" (
   "nombre" character varying(50) NOT NULL,
   "apellidos" character varying(100) NOT NULL,
   "edad" integer NOT NULL CHECK ("edad" >= 0 AND "edad" <= 120),
-  "sexo" character varying(20) NOT NULL,
+  "sexo" character varying(20) NOT NULL CHECK ("sexo" IN ('Hombre', 'Mujer')),
   "telefono" character varying(20) NOT NULL,
   "email" character varying NOT NULL,
   "alergias" character varying(500) NOT NULL DEFAULT '',
   "notas" character varying(1000) NOT NULL DEFAULT '',
+  "medicacion" text NOT NULL DEFAULT '',
+  "patologiasMedicas" text NOT NULL DEFAULT '',
+  "embarazada" boolean NULL,
+  "hemorragiasDentales" boolean NOT NULL DEFAULT false,
   "country" character varying(50) NOT NULL,
   "postalCode" character varying(10) NOT NULL,
   "street" character varying(100) NOT NULL,
   CONSTRAINT "UQ_pacientes_email" UNIQUE ("email"),
   CONSTRAINT "UQ_pacientes_telefono" UNIQUE ("telefono"),
-  CONSTRAINT "PK_pacientes" PRIMARY KEY ("id")
+  CONSTRAINT "PK_pacientes" PRIMARY KEY ("id"),
+  CONSTRAINT "CK_pacientes_embarazada" CHECK (("sexo" = 'Hombre' AND "embarazada" IS NULL) OR ("sexo" = 'Mujer'))
 ) 

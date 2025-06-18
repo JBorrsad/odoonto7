@@ -9,7 +9,11 @@ import {
   MinLength,
   Min,
   Max,
+  IsEnum,
+  IsBoolean,
+  IsOptional,
 } from 'class-validator';
+import { Sexo } from '@src/domain/paciente/paciente.types';
 
 export class CreatePacienteRequestDto {
   @ApiProperty({ example: 'Juan', description: 'Nombre del paciente' })
@@ -35,10 +39,13 @@ export class CreatePacienteRequestDto {
   @Max(120)
   readonly edad: number;
 
-  @ApiProperty({ example: 'Masculino', description: 'Sexo del paciente' })
-  @MaxLength(20)
-  @IsString()
-  readonly sexo: string;
+  @ApiProperty({
+    example: Sexo.HOMBRE,
+    description: 'Sexo del paciente',
+    enum: Sexo,
+  })
+  @IsEnum(Sexo)
+  readonly sexo: Sexo;
 
   @ApiProperty({
     example: '+34612345678',
@@ -70,6 +77,36 @@ export class CreatePacienteRequestDto {
   @MaxLength(1000)
   @IsString()
   readonly notas: string;
+
+  @ApiProperty({
+    example: 'Omeprazol 20mg cada 12h, Ibuprofeno 600mg si dolor',
+    description: 'Medicación actual del paciente',
+  })
+  @IsString()
+  readonly medicacion: string;
+
+  @ApiProperty({
+    example: 'Hipertensión arterial, diabetes tipo 2',
+    description: 'Patologías médicas del paciente',
+  })
+  @IsString()
+  readonly patologiasMedicas: string;
+
+  @ApiProperty({
+    example: false,
+    description: 'Estado de embarazo (solo para mujeres)',
+    required: false,
+  })
+  @IsOptional()
+  @IsBoolean()
+  readonly embarazada?: boolean;
+
+  @ApiProperty({
+    example: false,
+    description: 'Historial de hemorragias dentales en extracciones',
+  })
+  @IsBoolean()
+  readonly hemorragiasDentales: boolean;
 
   @ApiProperty({ example: 'España', description: 'País de residencia' })
   @MaxLength(50)

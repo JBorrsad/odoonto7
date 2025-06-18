@@ -1,9 +1,11 @@
+import { Sexo } from '@src/domain/paciente/paciente.types';
+
 export class UpdatePacienteDatosCommand {
   readonly pacienteId: string;
   readonly nombre?: string;
   readonly apellidos?: string;
   readonly edad?: number;
-  readonly sexo?: string;
+  readonly sexo?: Sexo;
 
   constructor(props: UpdatePacienteDatosCommand) {
     this.pacienteId = props.pacienteId;

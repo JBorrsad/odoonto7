@@ -23,6 +23,10 @@ export class PacienteMapper
       email: copy.email,
       alergias: copy.alergias,
       notas: copy.notas,
+      medicacion: copy.medicacion,
+      patologiasMedicas: copy.patologiasMedicas,
+      embarazada: copy.embarazada ?? null,
+      hemorragiasDentales: copy.hemorragiasDentales,
       country: copy.address.country,
       postalCode: copy.address.postalCode,
       street: copy.address.street,
@@ -44,6 +48,10 @@ export class PacienteMapper
         email: record.email,
         alergias: record.alergias,
         notas: record.notas,
+        medicacion: record.medicacion,
+        patologiasMedicas: record.patologiasMedicas,
+        embarazada: record.embarazada ?? undefined,
+        hemorragiasDentales: record.hemorragiasDentales,
         address: new Address({
           street: record.street,
           postalCode: record.postalCode,
@@ -65,6 +73,10 @@ export class PacienteMapper
     response.email = props.email;
     response.alergias = props.alergias;
     response.notas = props.notas;
+    response.medicacion = props.medicacion;
+    response.patologiasMedicas = props.patologiasMedicas;
+    response.embarazada = props.embarazada;
+    response.hemorragiasDentales = props.hemorragiasDentales;
     response.country = props.address.country;
     response.postalCode = props.address.postalCode;
     response.street = props.address.street;
