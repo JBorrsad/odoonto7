@@ -1,0 +1,11 @@
+export class UpdatePacienteContactoCommand {
+  readonly pacienteId: string;
+  readonly telefono?: string;
+  readonly email?: string;
+
+  constructor(props: UpdatePacienteContactoCommand) {
+    this.pacienteId = props.pacienteId;
+    this.telefono = props.telefono;
+    this.email = props.email;
+  }
+}

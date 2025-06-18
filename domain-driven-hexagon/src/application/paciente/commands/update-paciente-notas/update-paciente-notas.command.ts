@@ -1,0 +1,9 @@
+export class UpdatePacienteNotasCommand {
+  readonly pacienteId: string;
+  readonly notas: string;
+
+  constructor(props: UpdatePacienteNotasCommand) {
+    this.pacienteId = props.pacienteId;
+    this.notas = props.notas;
+  }
+}
