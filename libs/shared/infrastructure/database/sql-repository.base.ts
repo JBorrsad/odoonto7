@@ -4,7 +4,7 @@ import { Mapper } from '../../domain/ddd';
 import { RepositoryPort } from '../../domain/ddd';
 import { ConflictException } from '../../domain/exceptions';
 import { EventEmitter2 } from '@nestjs/event-emitter';
-import { None, Option, Some } from 'oxide.ts';
+import { None, Option, Some } from 'oxide';
 import {
   DatabasePool,
   DatabaseTransactionConnection,

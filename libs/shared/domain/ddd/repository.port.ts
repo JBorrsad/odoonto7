@@ -1,4 +1,4 @@
-import { Option } from 'oxide.ts';
+import { Option } from 'oxide';
 
 /*  Most of repositories will probably need generic 
     save/find/delete operations, so it's easier

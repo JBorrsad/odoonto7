@@ -29,7 +29,7 @@
     "dotenv": "^16.0.0",
     "nanoid": "^4.0.0",
     "nestjs-request-context": "^3.0.0",
-    "oxide.ts": "^1.1.0",
+    "oxide.ts": "^6.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "slonik": "^37.0.0",

@@ -1,11 +1,10 @@
 import { DomainEvent, DomainEventProps } from '@odoonto7/shared';
 
 export class PacienteMedicacionUpdatedDomainEvent extends DomainEvent {
-  readonly medicacion: string[];
+  readonly medicacion: string;
 
   constructor(props: DomainEventProps<PacienteMedicacionUpdatedDomainEvent>) {
     super(props);
     this.medicacion = props.medicacion;
   }
 }
-
