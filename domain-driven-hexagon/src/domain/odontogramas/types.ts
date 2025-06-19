@@ -7,21 +7,11 @@ export enum TipoDentadura {
 
 export enum CaraDiente {
   VESTIBULAR = 'vestibular',
-  LABIAL = 'labial',
-  BUCAL = 'bucal',
-  LINGUAL = 'lingual',
   PALATINO = 'palatino',
   MESIAL = 'mesial',
   DISTAL = 'distal',
   OCLUSAL = 'oclusal',
   INCISAL = 'incisal',
-}
-
-export enum TipoDiente {
-  INCISIVO = 'incisivo',
-  CANINO = 'canino',
-  PREMOLAR = 'premolar',
-  MOLAR = 'molar',
 }
 
 export enum TipoLesion {
@@ -36,15 +26,21 @@ export enum TipoTratamiento {
   RECONSTRUCCION = 'reconstruccion',
 }
 
+export enum TipoDiente {
+  INCISIVO = 'incisivo',
+  CANINO = 'canino',
+  PREMOLAR = 'premolar',
+  MOLAR = 'molar',
+}
+
+import { Diente } from './value-objects/diente.value-object';
+
+export interface OdontogramaProps {
+  tipoDentadura: TipoDentadura;
+  dientes: Map<string, Diente>;
+}
+
 export interface CreateOdontogramaProps {
   id: string;
   tipoDentadura: TipoDentadura;
-}
-
-export interface OdontogramaProps {
-  id: string;
-  tipoDentadura: TipoDentadura;
-  dientes: Map<string, any>;
-  createdAt: Date;
-  updatedAt: Date;
 }

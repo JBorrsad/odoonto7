@@ -1,20 +1,19 @@
 import { AggregateRoot, AggregateID } from '@src/shared/ddd';
-import { PacienteCreatedDomainEvent } from './events/paciente-created.domain-event';
-import { PacienteAddressUpdatedDomainEvent } from './events/paciente-address-updated.domain-event';
-import { PacienteContactoUpdatedDomainEvent } from './events/paciente-contacto-updated.domain-event';
-import { PacienteDatosUpdatedDomainEvent } from './events/paciente-datos-updated.domain-event';
-import { PacienteAlergiasUpdatedDomainEvent } from './events/paciente-alergias-updated.domain-event';
-import { PacienteNotasUpdatedDomainEvent } from './events/paciente-notas-updated.domain-event';
-import { PacienteMedicacionUpdatedDomainEvent } from './events/paciente-medicacion-updated.domain-event';
-import { PacientePatologiasUpdatedDomainEvent } from './events/paciente-patologias-updated.domain-event';
-import { PacienteEmbarazadaUpdatedDomainEvent } from './events/paciente-embarazada-updated.domain-event';
-import { PacienteHemorragiasUpdatedDomainEvent } from './events/paciente-hemorragias-updated.domain-event';
-import { PacienteDeletedDomainEvent } from './events/paciente-deleted.domain-event';
-import { PacienteInvalidPregnancyError } from './errors/paciente-invalid-pregnancy.error';
-import { Address, AddressProps } from './value-objects/address.value-object';
+import { PacienteCreatedDomainEvent } from '../events/paciente-created.domain-event';
+import { PacienteAddressUpdatedDomainEvent } from '../events/paciente-address-updated.domain-event';
+import { PacienteContactoUpdatedDomainEvent } from '../events/paciente-contacto-updated.domain-event';
+import { PacienteDatosUpdatedDomainEvent } from '../events/paciente-datos-updated.domain-event';
+import { PacienteAlergiasUpdatedDomainEvent } from '../events/paciente-alergias-updated.domain-event';
+import { PacienteNotasUpdatedDomainEvent } from '../events/paciente-notas-updated.domain-event';
+import { PacienteMedicacionUpdatedDomainEvent } from '../events/paciente-medicacion-updated.domain-event';
+import { PacientePatologiasUpdatedDomainEvent } from '../events/paciente-patologias-updated.domain-event';
+import { PacienteEmbarazadaUpdatedDomainEvent } from '../events/paciente-embarazada-updated.domain-event';
+import { PacienteHemorragiasUpdatedDomainEvent } from '../events/paciente-hemorragias-updated.domain-event';
+import { PacienteDeletedDomainEvent } from '../events/paciente-deleted.domain-event';
+import { PacienteInvalidPregnancyError } from '../errors/paciente-invalid-pregnancy.error';
+import { Address, AddressProps } from '../value-objects/address.value-object';
 import {
   CreatePacienteProps,
-  PacienteProps,
   UpdatePacienteAddressProps,
   UpdatePacienteContactoProps,
   UpdatePacienteDatosProps,
@@ -25,7 +24,7 @@ import {
   UpdatePacienteEmbarazadaProps,
   UpdatePacienteHemorragiasProps,
   Sexo,
-} from './paciente.types';
+} from '../types';
 import { randomUUID } from 'crypto';
 
 export class PacienteEntity extends AggregateRoot<PacienteProps> {

@@ -13,7 +13,6 @@ module.exports = {
   plugins: ['@typescript-eslint/eslint-plugin'],
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
   ],
   root: true,
   env: {
@@ -24,7 +23,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+
 
     // TS errors
     '@typescript-eslint/no-misused-new': 'error',

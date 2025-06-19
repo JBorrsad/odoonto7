@@ -7,4 +7,4 @@ export class PacientePatologiasUpdatedDomainEvent extends DomainEvent {
     super(props);
     this.patologiasMedicas = props.patologiasMedicas;
   }
-} 
+}

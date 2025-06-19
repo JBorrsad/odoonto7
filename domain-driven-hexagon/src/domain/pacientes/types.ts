@@ -12,35 +12,40 @@ export interface PacienteProps {
   sexo: Sexo;
   telefono: string;
   email: string;
+  address: Address;
   alergias: string;
   notas: string;
   medicacion: string;
   patologiasMedicas: string;
   embarazada?: boolean;
   hemorragiasDentales: boolean;
-  address: Address;
 }
 
 export interface CreatePacienteProps {
+  id: string;
   nombre: string;
   apellidos: string;
   edad: number;
   sexo: Sexo;
   telefono: string;
   email: string;
+  address: {
+    street: string;
+    postalCode: string;
+    country: string;
+  };
   alergias: string;
   notas: string;
   medicacion: string;
   patologiasMedicas: string;
   embarazada?: boolean;
   hemorragiasDentales: boolean;
-  address: Address;
 }
 
 export interface UpdatePacienteAddressProps {
-  country?: string;
-  postalCode?: string;
   street?: string;
+  postalCode?: string;
+  country?: string;
 }
 
 export interface UpdatePacienteContactoProps {
@@ -77,4 +82,4 @@ export interface UpdatePacienteEmbarazadaProps {
 
 export interface UpdatePacienteHemorragiasProps {
   hemorragiasDentales: boolean;
-}
+} 
