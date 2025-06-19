@@ -1,5 +1,5 @@
 import { NotFoundException } from '@odoonto7/shared';
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
 import { ICommandHandler } from '@nestjs/cqrs';
 import { Result } from 'oxide.ts';
 import { DeletePacienteCommand } from './delete-paciente.command';

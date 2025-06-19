@@ -2,14 +2,13 @@ import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
 import { SlonikModule } from 'nestjs-slonik';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { UserModule } from '@src/config/modules/user.module';
-import { WalletModule } from '@src/config/modules/wallet.module';
-
+import { UserModule } from '@modules/user/user.module';
+import { WalletModule } from '@modules/wallet/wallet.module';
 import { RequestContextModule } from 'nestjs-request-context';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { ContextInterceptor } from '@odoonto7/shared/application/context/ContextInterceptor';
-import { ExceptionInterceptor } from '@odoonto7/shared/application/interceptors/exception.interceptor';
-import { postgresConnectionUri } from '@src/config/database.config';
+import { ContextInterceptor } from './libs/application/context/ContextInterceptor';
+import { ExceptionInterceptor } from '@libs/application/interceptors/exception.interceptor';
+import { postgresConnectionUri } from './configs/database.config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 

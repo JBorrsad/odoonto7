@@ -2,8 +2,8 @@ import { IQueryHandler } from '@nestjs/cqrs';
 import { Result } from 'oxide.ts';
 import { PaginatedParams, PaginatedQueryBase } from '@odoonto7/shared';
 import { Paginated } from '@odoonto7/shared';
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
-import { PacienteEntity } from '../../../domain/paciente';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
+import { PacienteEntity } from '../../../../domain/paciente';
 export declare class FindPacientesQuery extends PaginatedQueryBase {
     readonly country?: string;
     readonly postalCode?: string;

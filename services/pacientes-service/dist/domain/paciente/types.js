@@ -5,6 +5,5 @@ var Sexo;
 (function (Sexo) {
     Sexo["HOMBRE"] = "M";
     Sexo["MUJER"] = "F";
-    Sexo["OTRO"] = "O";
 })(Sexo || (exports.Sexo = Sexo = {}));
 //# sourceMappingURL=types.js.map

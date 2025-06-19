@@ -59,10 +59,10 @@ export class PacienteResponseDto extends ResponseBase {
   street: string;
 
   @ApiProperty({
-    example: ['Alérgico a penicilina'],
+    example: 'Alérgico a penicilina',
     description: 'Alergias del paciente',
   })
-  alergias?: string[];
+  alergias?: string;
 
   @ApiProperty({
     example: 'Paciente nervioso',
@@ -71,16 +71,16 @@ export class PacienteResponseDto extends ResponseBase {
   notas?: string;
 
   @ApiProperty({
-    example: ['Omeprazol 20mg'],
+    example: 'Omeprazol 20mg',
     description: 'Medicación actual',
   })
-  medicacion?: string[];
+  medicacion?: string;
 
   @ApiProperty({
-    example: ['Hipertensión arterial'],
+    example: 'Hipertensión arterial',
     description: 'Patologías médicas',
   })
-  patologiasMedicas?: string[];
+  patologiasMedicas?: string;
 
   @ApiProperty({
     example: false,

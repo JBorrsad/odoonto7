@@ -1,12 +1,12 @@
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
-import { Address, PacienteAlreadyExistsError, PacienteEntity } from '../../../domain/paciente';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
+import { Address, PacienteAlreadyExistsError, PacienteEntity } from '../../../../domain/paciente';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { CreatePacienteCommand } from './create-paciente.command';
 import { AggregateID } from '@odoonto7/shared';
 import { ConflictException } from '@odoonto7/shared';
 import { Inject } from '@nestjs/common';
-import { PACIENTE_REPOSITORY } from '../../../config/modules/paciente.di-tokens';
+import { PACIENTE_REPOSITORY } from '../../../../config/modules/paciente.di-tokens';
 
 @CommandHandler(CreatePacienteCommand)
 export class CreatePacienteService

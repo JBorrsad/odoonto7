@@ -34,7 +34,7 @@
     "oxide.ts": "^1.1.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "slonik": "^31.4.2",
+
     "zod": "^3.21.0"
   },
   "devDependencies": {

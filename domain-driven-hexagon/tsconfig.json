@@ -21,10 +21,10 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@src/*": ["src/*"],
-      "@config/*": ["src/config/*"],
-      "@tests/*": ["tests/*"],
-      "@odoonto7/shared": ["libs/shared"],
-      "@odoonto7/shared/*": ["libs/shared/*"]
+      "@modules/*": ["src/modules/*"],
+      "@config/*": ["src/configs/*"],
+      "@libs/*": ["src/libs/*"],
+      "@tests/*": ["tests/*"]
     }
   }
 }

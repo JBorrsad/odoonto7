@@ -3,9 +3,9 @@ import { Ok, Result } from 'oxide.ts';
 import { PaginatedParams, PaginatedQueryBase } from '@odoonto7/shared';
 import { Paginated } from '@odoonto7/shared';
 import { Inject } from '@nestjs/common';
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
-import { PACIENTE_REPOSITORY } from '../../../config/modules/paciente.di-tokens';
-import { PacienteEntity } from '../../../domain/paciente';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
+import { PACIENTE_REPOSITORY } from '../../../../config/modules/paciente.di-tokens';
+import { PacienteEntity } from '../../../../domain/paciente';
 
 export class FindPacientesQuery extends PaginatedQueryBase {
   readonly country?: string;
@@ -40,13 +40,7 @@ export class FindPacientesQueryHandler
   ): Promise<Result<Paginated<PacienteEntity>, Error>> {
     // Para simplificar y evitar problemas de SQL, retornamos una lista vacía por ahora
     // TODO: Implementar filtros en el repositorio
-    const result = await this.repository.findAll();
-    
-    if (result.isErr()) {
-      return result;
-    }
-    
-    const entities = result.unwrap();
+    const entities = await this.repository.findAll();
     
     return Ok(
       new Paginated({

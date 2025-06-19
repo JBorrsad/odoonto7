@@ -9,6 +9,15 @@
   "scripts": {
     "build:shared": "cd libs/shared && npm run build",
     "build:all": "npm run build:shared && npm run build",
-    "start:dev": "npm run build:shared && nest start --watch"
+    "start:dev": "npm run build:shared && nest start --watch",
+    "deps:validate": "depcruise services libs --config .dependency-cruiser.js --output-type err-long",
+    "deps:graph": "depcruise services libs --include-only \"^(services|libs)\" --config .dependency-cruiser.js --output-type dot | dot -T svg > dependency-graph.svg",
+    "deps:check": "depcruise services libs --config .dependency-cruiser.js --output-type err",
+    "deps:info": "depcruise services libs --config .dependency-cruiser.js --output-type text",
+    "verify:architecture": "npm run deps:check",
+    "build:verified": "npm run verify:architecture && npm run build:all"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "^16.10.3"
   }
-} 
+}

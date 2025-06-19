@@ -36,13 +36,6 @@ export enum TipoDiente {
   MOLAR = 'molar',
 }
 
-import { Diente } from './value-objects/diente.value-object';
-
-export interface OdontogramaProps {
-  tipoDentadura: TipoDentadura;
-  dientes: Map<string, Diente>;
-}
-
 export interface CreateOdontogramaProps {
   id: string;
   tipoDentadura: TipoDentadura;

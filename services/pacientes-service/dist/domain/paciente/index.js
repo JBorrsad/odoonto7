@@ -14,7 +14,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Sexo = void 0;
 __exportStar(require("./entities/paciente.entity"), exports);
 __exportStar(require("./value-objects/address.value-object"), exports);
 __exportStar(require("./events/paciente-created.domain-event"), exports);
@@ -30,6 +29,5 @@ __exportStar(require("./events/paciente-embarazada-updated.domain-event"), expor
 __exportStar(require("./events/paciente-hemorragias-updated.domain-event"), exports);
 __exportStar(require("./errors/paciente-already-exists.error"), exports);
 __exportStar(require("./errors/paciente-invalid-pregnancy.error"), exports);
-var types_1 = require("./types");
-Object.defineProperty(exports, "Sexo", { enumerable: true, get: function () { return types_1.Sexo; } });
+__exportStar(require("./types"), exports);
 //# sourceMappingURL=index.js.map

@@ -11,17 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreatePacienteService = void 0;
-const paciente_repository_port_1 = require("../../../infrastructure/paciente/paciente.repository.port");
-const paciente_1 = require("../../../domain/paciente");
+const paciente_1 = require("../../../../domain/paciente");
 const cqrs_1 = require("@nestjs/cqrs");
 const oxide_ts_1 = require("oxide.ts");
 const create_paciente_command_1 = require("./create-paciente.command");
 const shared_1 = require("@odoonto7/shared");
 const common_1 = require("@nestjs/common");
-const paciente_di_tokens_1 = require("../../../config/modules/paciente.di-tokens");
+const paciente_di_tokens_1 = require("../../../../config/modules/paciente.di-tokens");
 let CreatePacienteService = class CreatePacienteService {
     constructor(pacienteRepo) {
         this.pacienteRepo = pacienteRepo;
@@ -62,6 +60,6 @@ exports.CreatePacienteService = CreatePacienteService;
 exports.CreatePacienteService = CreatePacienteService = __decorate([
     (0, cqrs_1.CommandHandler)(create_paciente_command_1.CreatePacienteCommand),
     __param(0, (0, common_1.Inject)(paciente_di_tokens_1.PACIENTE_REPOSITORY)),
-    __metadata("design:paramtypes", [typeof (_a = typeof paciente_repository_port_1.PacienteRepositoryPort !== "undefined" && paciente_repository_port_1.PacienteRepositoryPort) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [Object])
 ], CreatePacienteService);
 //# sourceMappingURL=create-paciente.service.js.map

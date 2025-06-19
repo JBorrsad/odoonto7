@@ -10,10 +10,10 @@ export declare class PacienteResponseDto extends ResponseBase {
     country: string;
     postalCode: string;
     street: string;
-    alergias?: string[];
+    alergias?: string;
     notas?: string;
-    medicacion?: string[];
-    patologiasMedicas?: string[];
+    medicacion?: string;
+    patologiasMedicas?: string;
     embarazada?: boolean;
     hemorragiasDentales?: boolean;
 }

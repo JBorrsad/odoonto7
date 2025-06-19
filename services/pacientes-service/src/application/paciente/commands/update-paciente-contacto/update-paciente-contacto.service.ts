@@ -1,10 +1,10 @@
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { UpdatePacienteContactoCommand } from './update-paciente-contacto.command';
 import { AggregateID } from '@odoonto7/shared';
 import { Inject } from '@nestjs/common';
-import { PACIENTE_REPOSITORY } from '../../../config/modules/paciente.di-tokens';
+import { PACIENTE_REPOSITORY } from '../../../../config/modules/paciente.di-tokens';
 import { NotFoundException } from '@odoonto7/shared';
 
 @CommandHandler(UpdatePacienteContactoCommand)

@@ -1,23 +1,5 @@
 {
   "cucumberautocomplete.steps": ["tests/**/*.ts"],
   "cucumberautocomplete.strictGherkinCompletion": true,
-  "cSpell.words": ["instanceof", "Slonik"],
-  "git.decorations.enabled": true,
-  "explorer.decorations.colors": true,
-  "explorer.decorations.badges": true,
-  "workbench.colorCustomizations": {
-    "gitDecoration.modifiedResourceForeground": "#4CAF50",
-    "gitDecoration.untrackedResourceForeground": "#8BC34A",
-    "gitDecoration.addedResourceForeground": "#66BB6A",
-    "gitDecoration.conflictingResourceForeground": "#FF9800",
-    "gitDecoration.deletedResourceForeground": "#F44336",
-    "gitDecoration.ignoredResourceForeground": "#9E9E9E",
-    "gitDecoration.stageModifiedResourceForeground": "#4CAF50",
-    "gitDecoration.stageDeletedResourceForeground": "#F44336",
-    "list.errorForeground": "#F44336",
-    "list.warningForeground": "#FF9800",
-    "explorerGitDecoration.modifiedResourceForeground": "#4CAF50",
-    "explorerGitDecoration.untrackedResourceForeground": "#8BC34A",
-    "explorerGitDecoration.addedResourceForeground": "#66BB6A"
-  }
+  "cSpell.words": ["instanceof", "Slonik"]
 }

@@ -1,1 +1,1 @@
-export declare const PACIENTE_REPOSITORY = "PACIENTE_REPOSITORY";
+export declare const PACIENTE_REPOSITORY: unique symbol;

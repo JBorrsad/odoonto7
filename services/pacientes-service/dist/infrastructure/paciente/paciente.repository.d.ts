@@ -25,15 +25,12 @@ export declare const pacienteSchema: z.ZodObject<{
     postalCode: z.ZodString;
     street: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    country?: string;
-    postalCode?: string;
-    street?: string;
-    email?: string;
     nombre?: string;
     apellidos?: string;
     edad?: number;
     sexo?: Sexo;
     telefono?: string;
+    email?: string;
     alergias?: string;
     notas?: string;
     medicacion?: string;
@@ -41,18 +38,18 @@ export declare const pacienteSchema: z.ZodObject<{
     embarazada?: boolean;
     hemorragiasDentales?: boolean;
     id?: string;
+    country?: string;
+    postalCode?: string;
+    street?: string;
     createdAt?: Date;
     updatedAt?: Date;
 }, {
-    country?: string;
-    postalCode?: string;
-    street?: string;
-    email?: string;
     nombre?: string;
     apellidos?: string;
     edad?: number;
     sexo?: Sexo;
     telefono?: string;
+    email?: string;
     alergias?: string;
     notas?: string;
     medicacion?: string;
@@ -60,6 +57,9 @@ export declare const pacienteSchema: z.ZodObject<{
     embarazada?: boolean;
     hemorragiasDentales?: boolean;
     id?: string;
+    country?: string;
+    postalCode?: string;
+    street?: string;
     createdAt?: unknown;
     updatedAt?: unknown;
 }>;
@@ -86,15 +86,12 @@ export declare class PacienteRepository extends SqlRepositoryBase<PacienteEntity
         postalCode: z.ZodString;
         street: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        country?: string;
-        postalCode?: string;
-        street?: string;
-        email?: string;
         nombre?: string;
         apellidos?: string;
         edad?: number;
         sexo?: Sexo;
         telefono?: string;
+        email?: string;
         alergias?: string;
         notas?: string;
         medicacion?: string;
@@ -102,18 +99,18 @@ export declare class PacienteRepository extends SqlRepositoryBase<PacienteEntity
         embarazada?: boolean;
         hemorragiasDentales?: boolean;
         id?: string;
+        country?: string;
+        postalCode?: string;
+        street?: string;
         createdAt?: Date;
         updatedAt?: Date;
     }, {
-        country?: string;
-        postalCode?: string;
-        street?: string;
-        email?: string;
         nombre?: string;
         apellidos?: string;
         edad?: number;
         sexo?: Sexo;
         telefono?: string;
+        email?: string;
         alergias?: string;
         notas?: string;
         medicacion?: string;
@@ -121,6 +118,9 @@ export declare class PacienteRepository extends SqlRepositoryBase<PacienteEntity
         embarazada?: boolean;
         hemorragiasDentales?: boolean;
         id?: string;
+        country?: string;
+        postalCode?: string;
+        street?: string;
         createdAt?: unknown;
         updatedAt?: unknown;
     }>;

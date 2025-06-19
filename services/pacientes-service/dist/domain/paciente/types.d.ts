@@ -1,12 +1,7 @@
+import { AddressProps } from './value-objects/address.value-object';
 export declare enum Sexo {
     HOMBRE = "M",
-    MUJER = "F",
-    OTRO = "O"
-}
-export interface AddressProps {
-    street: string;
-    postalCode: string;
-    country: string;
+    MUJER = "F"
 }
 export interface PacienteProps {
     nombre: string;
@@ -16,10 +11,10 @@ export interface PacienteProps {
     telefono?: string;
     email?: string;
     address: AddressProps;
-    alergias?: string[];
+    alergias?: string;
     notas?: string;
-    medicacion?: string[];
-    patologiasMedicas?: string[];
+    medicacion?: string;
+    patologiasMedicas?: string;
     embarazada?: boolean;
     hemorragiasDentales?: boolean;
 }
@@ -42,16 +37,16 @@ export interface UpdatePacienteDatosProps {
     sexo?: Sexo;
 }
 export interface UpdatePacienteAlergiasProps {
-    alergias: string[];
+    alergias: string;
 }
 export interface UpdatePacienteNotasProps {
     notas: string;
 }
 export interface UpdatePacienteMedicacionProps {
-    medicacion: string[];
+    medicacion: string;
 }
 export interface UpdatePacientePatologiasProps {
-    patologiasMedicas: string[];
+    patologiasMedicas: string;
 }
 export interface UpdatePacienteEmbarazadaProps {
     embarazada: boolean;

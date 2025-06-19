@@ -1,9 +1,9 @@
 import { NotFoundException } from '@odoonto7/shared';
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
 import { Inject } from '@nestjs/common';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
-import { PACIENTE_REPOSITORY } from '../../../config/modules/paciente.di-tokens';
+import { PACIENTE_REPOSITORY } from '../../../../config/modules/paciente.di-tokens';
 import { DeletePacienteCommand } from './delete-paciente.command';
 
 @CommandHandler(DeletePacienteCommand)

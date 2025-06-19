@@ -11,7 +11,7 @@ import { CommandBus } from '@nestjs/cqrs';
 import { match, Result } from 'oxide.ts';
 import { CreatePacienteCommand } from '../../application/paciente/commands/create-paciente/create-paciente.command';
 import { CreatePacienteRequestDto } from './commands/create-paciente.request.dto';
-import { PacienteAlreadyExistsError } from '../../../domain/paciente';
+import { PacienteAlreadyExistsError } from '../../domain/paciente';
 import { IdResponse } from '@odoonto7/shared';
 import { AggregateID } from '@odoonto7/shared';
 import { ApiErrorResponse } from '@odoonto7/shared';

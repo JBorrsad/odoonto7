@@ -9,10 +9,10 @@ export declare class PacienteEntity extends AggregateRoot<PacienteProps> {
     get sexo(): Sexo;
     get telefono(): string | undefined;
     get email(): string | undefined;
-    get alergias(): string[] | undefined;
+    get alergias(): string | undefined;
     get notas(): string | undefined;
-    get medicacion(): string[] | undefined;
-    get patologiasMedicas(): string[] | undefined;
+    get medicacion(): string | undefined;
+    get patologiasMedicas(): string | undefined;
     get embarazada(): boolean | undefined;
     get hemorragiasDentales(): boolean;
     delete(): void;

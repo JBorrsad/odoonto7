@@ -87,7 +87,7 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     return this.props.email;
   }
 
-  get alergias(): string[] | undefined {
+  get alergias(): string | undefined {
     return this.props.alergias;
   }
 
@@ -95,11 +95,11 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     return this.props.notas;
   }
 
-  get medicacion(): string[] | undefined {
+  get medicacion(): string | undefined {
     return this.props.medicacion;
   }
 
-  get patologiasMedicas(): string[] | undefined {
+  get patologiasMedicas(): string | undefined {
     return this.props.patologiasMedicas;
   }
 
@@ -234,10 +234,10 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
       });
     }
 
-    // ✅ 2. Cambiar el estado
+    
     this.props.embarazada = props.embarazada;
 
-    // 📢 3. Emitir el evento
+   
     this.addEvent(
       new PacienteEmbarazadaUpdatedDomainEvent({
         aggregateId: this.id,

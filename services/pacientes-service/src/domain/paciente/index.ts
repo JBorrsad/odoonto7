@@ -13,5 +13,5 @@ export * from './events/paciente-embarazada-updated.domain-event';
 export * from './events/paciente-hemorragias-updated.domain-event';
 export * from './errors/paciente-already-exists.error';
 export * from './errors/paciente-invalid-pregnancy.error';
-export { Sexo, PacienteProps, CreatePacienteProps, UpdatePacienteAddressProps, UpdatePacienteContactoProps, UpdatePacienteDatosProps, UpdatePacienteAlergiasProps, UpdatePacienteNotasProps, UpdatePacienteMedicacionProps, UpdatePacientePatologiasProps, UpdatePacienteEmbarazadaProps, UpdatePacienteHemorragiasProps } from './types'; 
+export * from './types'; 
 

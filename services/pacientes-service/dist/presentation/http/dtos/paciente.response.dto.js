@@ -82,10 +82,10 @@ __decorate([
 ], PacienteResponseDto.prototype, "street", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: ['Alérgico a penicilina'],
+        example: 'Alérgico a penicilina',
         description: 'Alergias del paciente',
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], PacienteResponseDto.prototype, "alergias", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
@@ -96,17 +96,17 @@ __decorate([
 ], PacienteResponseDto.prototype, "notas", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: ['Omeprazol 20mg'],
+        example: 'Omeprazol 20mg',
         description: 'Medicación actual',
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], PacienteResponseDto.prototype, "medicacion", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: ['Hipertensión arterial'],
+        example: 'Hipertensión arterial',
         description: 'Patologías médicas',
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], PacienteResponseDto.prototype, "patologiasMedicas", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({

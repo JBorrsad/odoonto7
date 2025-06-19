@@ -7,10 +7,10 @@ export declare class PacienteCreatedDomainEvent extends DomainEvent {
     readonly sexo: Sexo;
     readonly telefono?: string;
     readonly email?: string;
-    readonly alergias?: string[];
+    readonly alergias?: string;
     readonly notas?: string;
-    readonly medicacion?: string[];
-    readonly patologiasMedicas?: string[];
+    readonly medicacion?: string;
+    readonly patologiasMedicas?: string;
     readonly embarazada?: boolean;
     readonly hemorragiasDentales: boolean;
     readonly country: string;

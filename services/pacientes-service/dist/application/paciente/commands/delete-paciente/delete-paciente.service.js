@@ -11,15 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeletePacienteService = void 0;
 const shared_1 = require("@odoonto7/shared");
-const paciente_repository_port_1 = require("../../../infrastructure/paciente/paciente.repository.port");
 const common_1 = require("@nestjs/common");
 const cqrs_1 = require("@nestjs/cqrs");
 const oxide_ts_1 = require("oxide.ts");
-const paciente_di_tokens_1 = require("../../../config/modules/paciente.di-tokens");
+const paciente_di_tokens_1 = require("../../../../config/modules/paciente.di-tokens");
 const delete_paciente_command_1 = require("./delete-paciente.command");
 let DeletePacienteService = class DeletePacienteService {
     constructor(pacienteRepo) {
@@ -39,6 +37,6 @@ exports.DeletePacienteService = DeletePacienteService;
 exports.DeletePacienteService = DeletePacienteService = __decorate([
     (0, cqrs_1.CommandHandler)(delete_paciente_command_1.DeletePacienteCommand),
     __param(0, (0, common_1.Inject)(paciente_di_tokens_1.PACIENTE_REPOSITORY)),
-    __metadata("design:paramtypes", [typeof (_a = typeof paciente_repository_port_1.PacienteRepositoryPort !== "undefined" && paciente_repository_port_1.PacienteRepositoryPort) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [Object])
 ], DeletePacienteService);
 //# sourceMappingURL=delete-paciente.service.js.map

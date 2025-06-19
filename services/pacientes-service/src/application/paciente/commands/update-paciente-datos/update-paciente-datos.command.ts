@@ -1,4 +1,4 @@
-import { Sexo } from '../../../domain/paciente';
+import { Sexo } from '../../../../domain/paciente';
 
 export class UpdatePacienteDatosCommand {
   readonly pacienteId: string;

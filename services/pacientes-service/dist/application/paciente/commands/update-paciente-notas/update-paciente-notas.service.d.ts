@@ -1,4 +1,4 @@
-import { PacienteRepositoryPort } from '../../../infrastructure/paciente/paciente.repository.port';
+import { PacienteRepositoryPort } from '../../../../infrastructure/paciente/paciente.repository.port';
 import { ICommandHandler } from '@nestjs/cqrs';
 import { Result } from 'oxide.ts';
 import { UpdatePacienteNotasCommand } from './update-paciente-notas.command';

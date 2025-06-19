@@ -1,7 +1,12 @@
 
 import { AggregateRoot, CreateEntityProps } from '@odoonto7/shared';
-import { TipoDentadura, CaraDiente, TipoLesion, TipoTratamiento, TipoDiente, CreateOdontogramaProps, OdontogramaProps } from '../types';
+import { TipoDentadura, CaraDiente, TipoLesion, TipoTratamiento, TipoDiente, CreateOdontogramaProps } from '../types';
 import { Diente } from '../value-objects/diente.value-object';
+
+export interface OdontogramaProps {
+  tipoDentadura: TipoDentadura;
+  dientes: Map<string, Diente>;
+}
 import { Lesion } from '../value-objects/lesion.value-object';
 import { Tratamiento } from '../value-objects/tratamiento.value-object';
 import { OdontogramaCreatedDomainEvent } from '../events/odontograma-created.domain-event';
