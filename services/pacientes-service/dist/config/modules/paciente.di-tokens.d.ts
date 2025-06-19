@@ -1,0 +1,1 @@
+export declare const PACIENTE_REPOSITORY = "PACIENTE_REPOSITORY";

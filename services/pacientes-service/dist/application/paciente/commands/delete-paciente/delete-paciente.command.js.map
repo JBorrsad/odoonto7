@@ -1,0 +1,1 @@
+{"version":3,"file":"delete-paciente.command.js","sourceRoot":"","sources":["../../../../../src/application/paciente/commands/delete-paciente/delete-paciente.command.ts"],"names":[],"mappings":";;;AAAA,6CAAyD;AAEzD,MAAa,qBAAsB,SAAQ,gBAAO;IAGhD,YAAY,KAA0C;QACpD,KAAK,CAAC,KAAK,CAAC,CAAC;QACb,IAAI,CAAC,UAAU,GAAG,KAAK,CAAC,UAAU,CAAC;IACrC,CAAC;CACF;AAPD,sDAOC"}
