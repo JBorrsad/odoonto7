@@ -92,6 +92,5 @@ services/*/dist/
 services/*/build/
 services/*/node_modules/
 
-# Domain-driven-hexagon legacy
-domain-driven-hexagon/dist/
-domain-driven-hexagon/build/ 
+# Domain-driven-hexagon reference repository (optional - can be ignored)
+domain-driven-hexagon/ 

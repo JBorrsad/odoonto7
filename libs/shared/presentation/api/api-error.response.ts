@@ -1,5 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 
+// Re-export the base class from application layer
+export { ApiErrorResponse as BaseApiErrorResponse } from '../../application/responses/api-error.response';
+
+// Presentation layer wrapper with Swagger decorators
 export class ApiErrorResponse {
   @ApiProperty({ example: 400 })
   readonly statusCode: number;
@@ -21,11 +25,26 @@ export class ApiErrorResponse {
   })
   readonly subErrors?: string[];
 
-  constructor(body: ApiErrorResponse) {
-    this.statusCode = body.statusCode;
-    this.message = body.message;
-    this.error = body.error;
-    this.correlationId = body.correlationId;
-    this.subErrors = body.subErrors;
+  @ApiProperty({ example: '2023-01-01T00:00:00.000Z' })
+  readonly timestamp: string;
+
+  @ApiProperty({ example: '/api/v1/users' })
+  readonly path?: string;
+
+  constructor(props: {
+    statusCode: number;
+    message: string;
+    error: string;
+    correlationId: string;
+    subErrors?: string[];
+    path?: string;
+  }) {
+    this.statusCode = props.statusCode;
+    this.message = props.message;
+    this.error = props.error;
+    this.correlationId = props.correlationId;
+    this.subErrors = props.subErrors;
+    this.timestamp = new Date().toISOString();
+    this.path = props.path;
   }
 }

@@ -5,7 +5,7 @@ import { OdontogramaRepositoryPort } from '../../infrastructure/odontograma.repo
 import { OdontogramaEntity, TipoDentadura } from '../../domain/odontograma';
 import { OnEvent } from '@nestjs/event-emitter';
 import { Inject, Injectable } from '@nestjs/common';
-import { ODONTOGRAMA_REPOSITORY } from '../../modules/odontograma.module';
+import { ODONTOGRAMA_REPOSITORY } from '../odontograma.tokens';
 
 @Injectable()
 export class CreateOdontogramaWhenPacienteIsCreatedDomainEventHandler {

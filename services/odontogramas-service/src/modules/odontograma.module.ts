@@ -18,7 +18,7 @@ import { OdontogramaRepository } from '../infrastructure/odontograma.repository'
 import { OdontogramaMapper } from '../infrastructure/odontograma.mapper';
 
 // Tokens
-export const ODONTOGRAMA_REPOSITORY = Symbol('ODONTOGRAMA_REPOSITORY');
+import { ODONTOGRAMA_REPOSITORY } from '../application/odontograma.tokens';
 
 const commandHandlers = [
   CreateOdontogramaCommandHandler,

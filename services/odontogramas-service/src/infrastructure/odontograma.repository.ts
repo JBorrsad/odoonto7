@@ -6,17 +6,7 @@ import { OdontogramaEntity } from '../domain/odontograma';
 import { OdontogramaRepositoryPort } from './odontograma.repository.port';
 import { OdontogramaMapper } from './odontograma.mapper';
 import { EventEmitter2 } from '@nestjs/event-emitter';
-import { z } from 'zod';
-
-export const odontogramaSchema = z.object({
-  id: z.string().uuid(),
-  tipo_dentadura: z.string(),
-  dientes_data: z.any(),
-  created_at: z.preprocess((val: any) => new Date(val), z.date()),
-  updated_at: z.preprocess((val: any) => new Date(val), z.date()),
-});
-
-export type OdontogramaModel = z.TypeOf<typeof odontogramaSchema>;
+import { OdontogramaModel, odontogramaSchema } from './odontograma.schema';
 
 @Injectable()
 export class OdontogramaRepository
@@ -33,6 +23,11 @@ export class OdontogramaRepository
     eventEmitter: EventEmitter2,
   ) {
     super(pool, mapper, eventEmitter, new Logger(OdontogramaRepository.name));
+  }
+
+  async findOneByPacienteId(pacienteId: string): Promise<OdontogramaEntity | null> {
+    // TODO: Implementar cuando se resuelvan problemas de slonik
+    return null;
   }
 
   async findByPacienteId(

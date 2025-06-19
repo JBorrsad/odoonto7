@@ -2,9 +2,9 @@ import { Inject } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { Ok, Result } from 'oxide.ts';
 import { QueryBase } from '@odoonto7/shared';
-import { OdontogramaEntity } from '../../domain/odontograma';
-import { OdontogramaRepositoryPort } from '../../infrastructure/odontograma.repository.port';
-import { ODONTOGRAMA_REPOSITORY } from '../../modules/odontograma.module';
+import { OdontogramaEntity } from '../../../domain/odontograma';
+import { OdontogramaRepositoryPort } from '../../../infrastructure/odontograma.repository.port';
+import { ODONTOGRAMA_REPOSITORY } from '../../odontograma.tokens';
 
 export class FindOdontogramaByPacienteQuery extends QueryBase {
   readonly pacienteId: string;

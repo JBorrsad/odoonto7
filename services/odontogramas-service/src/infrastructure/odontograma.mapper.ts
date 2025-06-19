@@ -8,9 +8,9 @@ import {
   Lesion,
   Tratamiento
 } from '../domain/odontograma';
-import { OdontogramaResponseDto } from '@src/presentation/http/odontograma/dtos/odontograma.response.dto';
+import { OdontogramaResponseDto } from '../presentation/dtos/odontograma.response.dto';
 import { Injectable } from '@nestjs/common';
-import { OdontogramaModel } from './odontograma.repository';
+import { OdontogramaModel } from './odontograma.schema';
 
 @Injectable()
 export class OdontogramaMapper

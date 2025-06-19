@@ -9,7 +9,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ExceptionBase } from '../../domain/exceptions';
 import { RequestContextService } from '../context/AppRequestContext';
-import { ApiErrorResponse } from '../../presentation/api/api-error.response';
+import { ApiErrorResponse } from '../responses/api-error.response';
 
 export class ExceptionInterceptor implements NestInterceptor {
   private readonly logger: Logger = new Logger(ExceptionInterceptor.name);

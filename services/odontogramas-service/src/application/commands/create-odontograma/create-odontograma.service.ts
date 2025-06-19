@@ -2,9 +2,9 @@ import { Inject } from '@nestjs/common';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { CreateOdontogramaCommand } from './create-odontograma.command';
-import { OdontogramaEntity, OdontogramaAlreadyExistsError } from '../../domain/odontograma';
-import { OdontogramaRepositoryPort } from '../../infrastructure/odontograma.repository.port';
-import { ODONTOGRAMA_REPOSITORY } from '../../modules/odontograma.module';
+import { OdontogramaEntity, OdontogramaAlreadyExistsError } from '../../../domain/odontograma';
+import { OdontogramaRepositoryPort } from '../../../infrastructure/odontograma.repository.port';
+import { ODONTOGRAMA_REPOSITORY } from '../../odontograma.tokens';
 
 @CommandHandler(CreateOdontogramaCommand)
 export class CreateOdontogramaService implements ICommandHandler<CreateOdontogramaCommand> {

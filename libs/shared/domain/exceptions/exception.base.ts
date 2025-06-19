@@ -1,4 +1,4 @@
-import { RequestContextService } from '../../application/context/AppRequestContext';
+import { randomUUID } from 'crypto';
 
 export interface SerializedException {
   message: string;
@@ -43,8 +43,7 @@ export abstract class ExceptionBase extends Error {
   ) {
     super(message);
     Error.captureStackTrace(this, this.constructor);
-    const ctx = RequestContextService.getContext();
-    this.correlationId = ctx.requestId;
+    this.correlationId = randomUUID();
   }
 
   /**

@@ -1,8 +1,8 @@
 import { DomainEvent } from './domain-event.base';
 import { Entity } from './entity.base';
 import { EventEmitter2 } from '@nestjs/event-emitter';
-import { LoggerPort } from '../../infrastructure/ports/logger.port';
-import { RequestContextService } from '../../application/context/AppRequestContext';
+import { LoggerPort } from '../ports/logger.port';
+import { randomUUID } from 'crypto';
 
 export abstract class AggregateRoot<EntityProps> extends Entity<EntityProps> {
   private _domainEvents: DomainEvent[] = [];
@@ -26,7 +26,7 @@ export abstract class AggregateRoot<EntityProps> extends Entity<EntityProps> {
     await Promise.all(
       this.domainEvents.map(async (event) => {
         logger.debug(
-          `[${RequestContextService.getRequestId()}] "${
+          `[${randomUUID()}] "${
             event.constructor.name
           }" event published for aggregate ${this.constructor.name} : ${
             this.id

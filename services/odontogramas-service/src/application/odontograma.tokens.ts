@@ -1,0 +1,2 @@
+// Tokens para dependency injection
+export const ODONTOGRAMA_REPOSITORY = Symbol('ODONTOGRAMA_REPOSITORY'); 

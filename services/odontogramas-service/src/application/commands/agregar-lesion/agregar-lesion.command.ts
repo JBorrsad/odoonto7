@@ -2,7 +2,7 @@ import { Command, CommandProps } from '@odoonto7/shared';
 import {
   CaraDiente,
   TipoLesion,
-} from '../../domain/odontograma';
+} from '../../../domain/odontograma';
 
 export class AgregarLesionCommand extends Command {
   readonly odontogramaId: string;

@@ -1,5 +1,5 @@
 import { Command, CommandProps } from '@odoonto7/shared';
-import { TipoDentadura } from '../../domain/odontograma';
+import { TipoDentadura } from '../../../domain/odontograma';
 
 export class CreateOdontogramaCommand extends Command {
   readonly pacienteId: string;

@@ -1,5 +1,5 @@
 import { Mapper } from '@odoonto7/shared';
-import { PacienteModel, pacienteSchema } from './paciente.repository';
+import { PacienteModel, pacienteSchema } from './paciente.schema';
 import { Address, PacienteEntity } from '../../domain/paciente';
 import { PacienteResponseDto } from '../../presentation/http/dtos/paciente.response.dto';
 import { Injectable } from '@nestjs/common';
@@ -20,10 +20,10 @@ export class PacienteMapper
       sexo: copy.sexo,
       telefono: copy.telefono,
       email: copy.email,
-      alergias: copy.alergias ? JSON.stringify(copy.alergias) : undefined,
+      alergias: copy.alergias,
       notas: copy.notas,
-      medicacion: copy.medicacion ? JSON.stringify(copy.medicacion) : undefined,
-      patologiasMedicas: copy.patologiasMedicas ? JSON.stringify(copy.patologiasMedicas) : undefined,
+      medicacion: copy.medicacion,
+      patologiasMedicas: copy.patologiasMedicas,
       embarazada: copy.embarazada ?? null,
       hemorragiasDentales: copy.hemorragiasDentales,
       country: copy.address.country,
@@ -45,10 +45,10 @@ export class PacienteMapper
         sexo: record.sexo,
         telefono: record.telefono,
         email: record.email,
-        alergias: record.alergias ? JSON.parse(record.alergias) : undefined,
+        alergias: record.alergias,
         notas: record.notas,
-        medicacion: record.medicacion ? JSON.parse(record.medicacion) : undefined,
-        patologiasMedicas: record.patologiasMedicas ? JSON.parse(record.patologiasMedicas) : undefined,
+        medicacion: record.medicacion,
+        patologiasMedicas: record.patologiasMedicas,
         embarazada: record.embarazada ?? undefined,
         hemorragiasDentales: record.hemorragiasDentales,
         address: new Address({
