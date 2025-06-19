@@ -1,26 +1,35 @@
 import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
 
-// Commands
-// import { CreatePacienteCommandHandler } from '../application/paciente/commands/create-paciente/create-paciente.command-handler';
-// import { DeletePacienteCommandHandler } from '../application/paciente/commands/delete-paciente/delete-paciente.command-handler';
-// import { UpdatePacienteAddressCommandHandler } from '../application/paciente/commands/update-paciente-address/update-paciente-address.command-handler';
-// import { UpdatePacienteContactoCommandHandler } from '../application/paciente/commands/update-paciente-contacto/update-paciente-contacto.command-handler';
-// import { UpdatePacienteDatosCommandHandler } from '../application/paciente/commands/update-paciente-datos/update-paciente-datos.command-handler';
-// import { UpdatePacienteAlergiasCommandHandler } from '../application/paciente/commands/update-paciente-alergias/update-paciente-alergias.command-handler';
-// import { UpdatePacienteNotasCommandHandler } from '../application/paciente/commands/update-paciente-notas/update-paciente-notas.command-handler';
-// import { UpdatePacienteMedicacionCommandHandler } from '../application/paciente/commands/update-paciente-medicacion/update-paciente-medicacion.command-handler';
-// import { UpdatePacientePatologiasCommandHandler } from '../application/paciente/commands/update-paciente-patologias/update-paciente-patologias.command-handler';
-// import { UpdatePacienteEmbarazadaCommandHandler } from '../application/paciente/commands/update-paciente-embarazada/update-paciente-embarazada.command-handler';
-// import { UpdatePacienteHemorragiasCommandHandler } from '../application/paciente/commands/update-paciente-hemorragias/update-paciente-hemorragias.command-handler';
+// Command Services
+import { CreatePacienteService } from '../application/paciente/commands/create-paciente/create-paciente.service';
+import { DeletePacienteService } from '../application/paciente/commands/delete-paciente/delete-paciente.service';
+import { UpdatePacienteAddressService } from '../application/paciente/commands/update-paciente-address/update-paciente-address.service';
+import { UpdatePacienteContactoService } from '../application/paciente/commands/update-paciente-contacto/update-paciente-contacto.service';
+import { UpdatePacienteDatosService } from '../application/paciente/commands/update-paciente-datos/update-paciente-datos.service';
+import { UpdatePacienteAlergiasService } from '../application/paciente/commands/update-paciente-alergias/update-paciente-alergias.service';
+import { UpdatePacienteNotasService } from '../application/paciente/commands/update-paciente-notas/update-paciente-notas.service';
+import { UpdatePacienteMedicacionService } from '../application/paciente/commands/update-paciente-medicacion/update-paciente-medicacion.service';
+import { UpdatePacientePatologiasService } from '../application/paciente/commands/update-paciente-patologias/update-paciente-patologias.service';
+import { UpdatePacienteEmbarazadaService } from '../application/paciente/commands/update-paciente-embarazada/update-paciente-embarazada.service';
+import { UpdatePacienteHemorragiasService } from '../application/paciente/commands/update-paciente-hemorragias/update-paciente-hemorragias.service';
 
-// Queries
+// Query Handlers
 import { FindPacientesQueryHandler } from '../application/paciente/queries/find-pacientes/find-pacientes.query-handler';
+import { FindPacienteByIdQueryHandler } from '../application/paciente/queries/find-paciente-by-id/find-paciente-by-id.query-handler';
+
+// Event Handlers
+import { PacienteCreatedEventHandler } from '../application/paciente/event-handlers/paciente-created.event-handler';
+import { PacienteUpdatedEventHandler } from '../application/paciente/event-handlers/paciente-updated.event-handler';
+
+// Validators
+import { PacienteBusinessRulesValidator } from '../application/paciente/validators/paciente-business-rules.validator';
 
 // Controllers
 import { CreatePacienteHttpController } from '../presentation/http/create-paciente.http.controller';
 import { DeletePacienteHttpController } from '../presentation/http/delete-paciente.http-controller';
 import { FindPacientesHttpController } from '../presentation/http/find-pacientes.http.controller';
+import { FindPacienteByIdHttpController } from '../presentation/http/find-paciente-by-id.http.controller';
 import { UpdatePacienteAddressHttpController } from '../presentation/http/update-paciente-address.http.controller';
 import { UpdatePacienteAlergiasHttpController } from '../presentation/http/update-paciente-alergias.http.controller';
 import { UpdatePacienteContactoHttpController } from '../presentation/http/update-paciente-contacto.http.controller';
@@ -39,25 +48,34 @@ import { PacienteMapper } from '../infrastructure/paciente/paciente.mapper';
 export const PACIENTE_REPOSITORY = Symbol('PACIENTE_REPOSITORY');
 
 const commandHandlers = [
-  // CreatePacienteCommandHandler,
-  // DeletePacienteCommandHandler,
-  // UpdatePacienteAddressCommandHandler,
-  // UpdatePacienteContactoCommandHandler,
-  // UpdatePacienteDatosCommandHandler,
-  // UpdatePacienteAlergiasCommandHandler,
-  // UpdatePacienteNotasCommandHandler,
-  // UpdatePacienteMedicacionCommandHandler,
-  // UpdatePacientePatologiasCommandHandler,
-  // UpdatePacienteEmbarazadaCommandHandler,
-  // UpdatePacienteHemorragiasCommandHandler,
+  CreatePacienteService,
+  DeletePacienteService,
+  UpdatePacienteAddressService,
+  UpdatePacienteContactoService,
+  UpdatePacienteDatosService,
+  UpdatePacienteAlergiasService,
+  UpdatePacienteNotasService,
+  UpdatePacienteMedicacionService,
+  UpdatePacientePatologiasService,
+  UpdatePacienteEmbarazadaService,
+  UpdatePacienteHemorragiasService,
 ];
 
-const queryHandlers = [FindPacientesQueryHandler];
+const queryHandlers = [
+  FindPacientesQueryHandler,
+  FindPacienteByIdQueryHandler,
+];
+
+const eventHandlers = [
+  PacienteCreatedEventHandler,
+  PacienteUpdatedEventHandler,
+];
 
 const controllers = [
   CreatePacienteHttpController,
   DeletePacienteHttpController,
   FindPacientesHttpController,
+  FindPacienteByIdHttpController,
   UpdatePacienteAddressHttpController,
   UpdatePacienteAlergiasHttpController,
   UpdatePacienteContactoHttpController,
@@ -75,6 +93,8 @@ const controllers = [
   providers: [
     ...commandHandlers,
     ...queryHandlers,
+    ...eventHandlers,
+    PacienteBusinessRulesValidator,
     PacienteMapper,
     {
       provide: PACIENTE_REPOSITORY,

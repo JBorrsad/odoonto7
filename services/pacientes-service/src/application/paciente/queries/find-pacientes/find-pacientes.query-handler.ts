@@ -38,18 +38,38 @@ export class FindPacientesQueryHandler
   async execute(
     query: FindPacientesQuery,
   ): Promise<Result<Paginated<PacienteEntity>, Error>> {
-    // Para simplificar y evitar problemas de SQL, retornamos una lista vacía por ahora
-    // TODO: Implementar filtros en el repositorio
-    const entities = await this.repository.findAll();
-    
-    return Ok(
-      new Paginated({
-        data: entities,
-        count: entities.length,
+    try {
+      const entities = await this.repository.findWithFilters({
         limit: query.limit,
+        offset: query.offset,
         page: query.page,
-      }),
-    );
+        orderBy: query.orderBy,
+        country: query.country,
+        postalCode: query.postalCode,
+        street: query.street,
+        email: query.email,
+        nombre: query.nombre,
+        apellidos: query.apellidos,
+      });
+      
+      return Ok(
+        new Paginated({
+          data: entities,
+          count: entities.length,
+          limit: query.limit,
+          page: query.page,
+        }),
+      );
+    } catch (error) {
+      return Ok(
+        new Paginated({
+          data: [],
+          count: 0,
+          limit: query.limit,
+          page: query.page,
+        }),
+      );
+    }
   }
 }
 

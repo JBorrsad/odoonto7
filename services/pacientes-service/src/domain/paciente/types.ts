@@ -1,4 +1,4 @@
-import { AddressProps } from './value-objects/address.value-object';
+import { Address, AddressProps } from './value-objects/address.value-object';
 
 export enum Sexo {
   HOMBRE = 'M',
@@ -12,7 +12,7 @@ export interface PacienteProps {
   sexo: Sexo;
   telefono?: string;
   email?: string;
-  address: AddressProps;
+  address: Address;
   alergias?: string;
   notas?: string;
   medicacion?: string;

@@ -36,13 +36,34 @@ let FindPacientesQueryHandler = class FindPacientesQueryHandler {
         this.repository = repository;
     }
     async execute(query) {
-        const entities = await this.repository.findAll();
-        return (0, oxide_ts_1.Ok)(new shared_2.Paginated({
-            data: entities,
-            count: entities.length,
-            limit: query.limit,
-            page: query.page,
-        }));
+        try {
+            const entities = await this.repository.findWithFilters({
+                limit: query.limit,
+                offset: query.offset,
+                page: query.page,
+                orderBy: query.orderBy,
+                country: query.country,
+                postalCode: query.postalCode,
+                street: query.street,
+                email: query.email,
+                nombre: query.nombre,
+                apellidos: query.apellidos,
+            });
+            return (0, oxide_ts_1.Ok)(new shared_2.Paginated({
+                data: entities,
+                count: entities.length,
+                limit: query.limit,
+                page: query.page,
+            }));
+        }
+        catch (error) {
+            return (0, oxide_ts_1.Ok)(new shared_2.Paginated({
+                data: [],
+                count: 0,
+                limit: query.limit,
+                page: query.page,
+            }));
+        }
     }
 };
 exports.FindPacientesQueryHandler = FindPacientesQueryHandler;

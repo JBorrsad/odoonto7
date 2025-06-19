@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdatePacienteNotasCommand = void 0;
-class UpdatePacienteNotasCommand {
+const shared_1 = require("@odoonto7/shared");
+class UpdatePacienteNotasCommand extends shared_1.Command {
     constructor(props) {
+        super(props);
         this.pacienteId = props.pacienteId;
         this.notas = props.notas;
     }

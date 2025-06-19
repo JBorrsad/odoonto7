@@ -82,6 +82,9 @@ class PacienteEntity extends shared_1.AggregateRoot {
     get hemorragiasDentales() {
         return this.props.hemorragiasDentales;
     }
+    get address() {
+        return this.props.address;
+    }
     delete() {
         this.addEvent(new paciente_deleted_domain_event_1.PacienteDeletedDomainEvent({
             aggregateId: this.id,

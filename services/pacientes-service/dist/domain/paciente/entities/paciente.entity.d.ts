@@ -1,4 +1,5 @@
 import { AggregateRoot, AggregateID } from '@odoonto7/shared';
+import { Address } from '../value-objects/address.value-object';
 import { PacienteProps, CreatePacienteProps, UpdatePacienteAddressProps, UpdatePacienteContactoProps, UpdatePacienteDatosProps, UpdatePacienteAlergiasProps, UpdatePacienteNotasProps, UpdatePacienteMedicacionProps, UpdatePacientePatologiasProps, UpdatePacienteEmbarazadaProps, UpdatePacienteHemorragiasProps, Sexo } from '../types';
 export declare class PacienteEntity extends AggregateRoot<PacienteProps> {
     protected readonly _id: AggregateID;
@@ -15,6 +16,7 @@ export declare class PacienteEntity extends AggregateRoot<PacienteProps> {
     get patologiasMedicas(): string | undefined;
     get embarazada(): boolean | undefined;
     get hemorragiasDentales(): boolean;
+    get address(): Address;
     delete(): void;
     updateAddress(props: UpdatePacienteAddressProps): void;
     updateContacto(props: UpdatePacienteContactoProps): void;

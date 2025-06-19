@@ -1,5 +1,6 @@
-export declare class UpdatePacienteAlergiasCommand {
+import { Command, CommandProps } from '@odoonto7/shared';
+export declare class UpdatePacienteAlergiasCommand extends Command {
     readonly pacienteId: string;
     readonly alergias: string;
-    constructor(props: UpdatePacienteAlergiasCommand);
+    constructor(props: CommandProps<UpdatePacienteAlergiasCommand>);
 }

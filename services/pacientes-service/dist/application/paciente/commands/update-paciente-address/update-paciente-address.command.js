@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdatePacienteAddressCommand = void 0;
-class UpdatePacienteAddressCommand {
+const shared_1 = require("@odoonto7/shared");
+class UpdatePacienteAddressCommand extends shared_1.Command {
     constructor(props) {
+        super(props);
         this.pacienteId = props.pacienteId;
         this.country = props.country;
         this.postalCode = props.postalCode;

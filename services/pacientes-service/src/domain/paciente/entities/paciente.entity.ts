@@ -111,6 +111,9 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     return this.props.hemorragiasDentales;
   }
 
+  get address(): Address {
+    return this.props.address;
+  }
   delete(): void {
     this.addEvent(
       new PacienteDeletedDomainEvent({

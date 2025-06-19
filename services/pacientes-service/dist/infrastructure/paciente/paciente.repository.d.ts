@@ -1,5 +1,5 @@
 import { DatabasePool } from 'slonik';
-import { PacienteRepositoryPort } from './paciente.repository.port';
+import { PacienteRepositoryPort, FindPacientesParams } from './paciente.repository.port';
 import { PacienteMapper } from './paciente.mapper';
 import { PacienteEntity } from '../../domain/paciente';
 import { SqlRepositoryBase } from '@odoonto7/shared';
@@ -66,4 +66,5 @@ export declare class PacienteRepository extends SqlRepositoryBase<PacienteEntity
         updatedAt?: unknown;
     }>;
     constructor(pool: DatabasePool, mapper: PacienteMapper, eventEmitter: EventEmitter2);
+    findWithFilters(params: FindPacientesParams): Promise<PacienteEntity[]>;
 }
