@@ -1,5 +1,5 @@
 import { PaginatedQueryParams, RepositoryPort } from '@src/shared/ddd';
-import { PacienteEntity } from '@src/domain/paciente/paciente.entity';
+import { PacienteEntity } from '@src/domain/pacientes';
 
 export interface FindPacientesParams extends PaginatedQueryParams {
   readonly nombre?: string;

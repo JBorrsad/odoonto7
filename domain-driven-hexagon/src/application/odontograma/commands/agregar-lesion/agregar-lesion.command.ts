@@ -2,7 +2,7 @@ import { Command, CommandProps } from '@src/shared/ddd';
 import {
   CaraDiente,
   TipoLesion,
-} from '@src/domain/odontograma/odontograma.types';
+} from '@src/domain/odontogramas';
 
 export class AgregarLesionCommand extends Command {
   readonly odontogramaId: string;

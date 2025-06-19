@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ResponseBase } from '@src/shared/api/response.base';
-import { Sexo } from '@src/domain/paciente/paciente.types';
+import { Sexo } from '@src/domain/pacientes';
 
 export class PacienteResponseDto extends ResponseBase {
   @ApiProperty({

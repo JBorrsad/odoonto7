@@ -1,5 +1,5 @@
 import { ValueObject } from '@src/shared/ddd';
-import { CaraDiente } from '../odontograma.types';
+import { CaraDiente } from '../types';
 import { EstadoCara } from './estado-cara.value-object';
 import { Lesion } from './lesion.value-object';
 import { Tratamiento } from './tratamiento.value-object';

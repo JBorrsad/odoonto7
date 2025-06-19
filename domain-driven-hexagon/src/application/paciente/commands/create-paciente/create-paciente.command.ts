@@ -1,5 +1,5 @@
 import { Command, CommandProps } from '@src/shared/ddd';
-import { Sexo } from '@src/domain/paciente/paciente.types';
+import { Sexo } from '@src/domain/pacientes';
 
 export class CreatePacienteCommand extends Command {
   readonly nombre: string;

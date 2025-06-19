@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { AggregateRoot, CreateEntityProps } from '@src/shared/ddd';
 import { TipoDentadura, CaraDiente, TipoLesion, TipoTratamiento, TipoDiente, CreateOdontogramaProps, OdontogramaProps } from '../types';
 import { Diente } from '../value-objects/diente.value-object';
@@ -8,7 +8,8 @@ import { OdontogramaCreatedDomainEvent } from '../events/odontograma-created.dom
 import { TipoDentaduraCambiadoDomainEvent } from '../events/tipo-dentadura-cambiado.domain-event';
 import { LesionAgregadaDomainEvent } from '../events/lesion-agregada.domain-event';
 import { TratamientoAgregadoDomainEvent } from '../events/tratamiento-agregado.domain-event';
-import { InvalidDienteNumberError, InvalidTipoDentaduraError } from '../errors';
+import { InvalidDienteNumberError } from '../errors/invalid-diente-number.error';
+import { InvalidTipoDentaduraError } from '../errors/invalid-tipo-dentadura.error';
 
 export class OdontogramaEntity extends AggregateRoot<OdontogramaProps> {
   protected _id: string;

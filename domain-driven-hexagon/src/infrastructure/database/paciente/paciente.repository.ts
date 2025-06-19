@@ -3,11 +3,10 @@ import { DatabasePool, sql } from 'slonik';
 import { PacienteRepositoryPort } from './paciente.repository.port';
 import { z } from 'zod';
 import { PacienteMapper } from './paciente.mapper';
-import { PacienteEntity } from '@src/domain/paciente/paciente.entity';
+import { PacienteEntity, Sexo } from '@src/domain/pacientes';
 import { SqlRepositoryBase } from '@src/shared/db/sql-repository.base';
 import { Injectable, Logger } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
-import { Sexo } from '@src/domain/paciente/paciente.types';
 
 export const pacienteSchema = z.object({
   id: z.string().uuid(),

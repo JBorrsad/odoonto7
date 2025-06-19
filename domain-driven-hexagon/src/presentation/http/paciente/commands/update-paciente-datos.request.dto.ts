@@ -9,7 +9,7 @@ import {
   Matches,
   IsEnum,
 } from 'class-validator';
-import { Sexo } from '@src/domain/paciente/paciente.types';
+import { Sexo } from '@src/domain/pacientes';
 
 export class UpdatePacienteDatosRequestDto {
   @ApiProperty({

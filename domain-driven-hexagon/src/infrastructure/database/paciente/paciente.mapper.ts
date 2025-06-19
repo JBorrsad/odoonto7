@@ -1,7 +1,6 @@
 import { Mapper } from '@src/shared/ddd';
 import { PacienteModel, pacienteSchema } from './paciente.repository';
-import { Address } from '@src/domain/paciente/value-objects/address.value-object';
-import { PacienteEntity } from '@src/domain/paciente/paciente.entity';
+import { Address, PacienteEntity } from '@src/domain/pacientes';
 import { PacienteResponseDto } from '@src/presentation/http/paciente/dtos/paciente.response.dto';
 import { Injectable } from '@nestjs/common';
 

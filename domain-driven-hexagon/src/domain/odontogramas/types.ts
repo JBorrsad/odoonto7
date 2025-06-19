@@ -8,6 +8,9 @@ export enum TipoDentadura {
 export enum CaraDiente {
   VESTIBULAR = 'vestibular',
   PALATINO = 'palatino',
+  LABIAL = 'labial',
+  LINGUAL = 'lingual',
+  BUCAL = 'bucal',
   MESIAL = 'mesial',
   DISTAL = 'distal',
   OCLUSAL = 'oclusal',

@@ -22,7 +22,6 @@ export interface PacienteProps {
 }
 
 export interface CreatePacienteProps {
-  id: string;
   nombre: string;
   apellidos: string;
   edad: number;

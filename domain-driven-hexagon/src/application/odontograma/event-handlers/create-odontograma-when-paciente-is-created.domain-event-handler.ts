@@ -1,7 +1,6 @@
-import { PacienteCreatedDomainEvent } from '@src/domain/paciente/events/paciente-created.domain-event';
+import { PacienteCreatedDomainEvent } from '@src/domain/pacientes';
 import { OdontogramaRepositoryPort } from '@src/infrastructure/database/odontograma/odontograma.repository.port';
-import { OdontogramaEntity } from '@src/domain/odontograma/odontograma.entity';
-import { TipoDentadura } from '@src/domain/odontograma/odontograma.types';
+import { OdontogramaEntity, TipoDentadura } from '@src/domain/odontogramas';
 import { OnEvent } from '@nestjs/event-emitter';
 import { Inject, Injectable } from '@nestjs/common';
 import { ODONTOGRAMA_REPOSITORY } from '@src/config/modules/odontograma.di-tokens';

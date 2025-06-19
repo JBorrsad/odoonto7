@@ -1,11 +1,9 @@
 import { PacienteRepositoryPort } from '@src/infrastructure/database/paciente/paciente.repository.port';
-import { Address } from '@src/domain/paciente/value-objects/address.value-object';
+import { Address, PacienteAlreadyExistsError, PacienteEntity } from '@src/domain/pacientes';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { CreatePacienteCommand } from './create-paciente.command';
-import { PacienteAlreadyExistsError } from '@src/domain/paciente/paciente.errors';
 import { AggregateID } from '@src/shared/ddd';
-import { PacienteEntity } from '@src/domain/paciente/paciente.entity';
 import { ConflictException } from '@src/shared/exceptions';
 import { Inject } from '@nestjs/common';
 import { PACIENTE_REPOSITORY } from '@src/config/modules/paciente.di-tokens';

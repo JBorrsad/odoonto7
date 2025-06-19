@@ -1,5 +1,5 @@
 import { DomainEvent, DomainEventProps } from '@src/shared/ddd';
-import { CaraDiente, TipoLesion } from '../odontograma.types';
+import { CaraDiente, TipoLesion } from '../types';
 
 export class LesionAgregadaDomainEvent extends DomainEvent {
   readonly numeroDiente: string;

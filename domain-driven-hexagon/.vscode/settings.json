@@ -7,7 +7,7 @@
   "explorer.decorations.badges": true,
   "workbench.colorCustomizations": {
     "gitDecoration.modifiedResourceForeground": "#4CAF50",
-    "gitDecoration.untrackedResourceForeground": "#00FF00 !important",
+    "gitDecoration.untrackedResourceForeground": "#8BC34A",
     "gitDecoration.addedResourceForeground": "#66BB6A",
     "gitDecoration.conflictingResourceForeground": "#FF9800",
     "gitDecoration.deletedResourceForeground": "#F44336",
@@ -17,11 +17,7 @@
     "list.errorForeground": "#F44336",
     "list.warningForeground": "#FF9800",
     "explorerGitDecoration.modifiedResourceForeground": "#4CAF50",
-    "explorerGitDecoration.untrackedResourceForeground": "#00FF00 !important",
-    "explorerGitDecoration.addedResourceForeground": "#66BB6A",
-    "explorer.untracked": "#00FF00",
-    "tree.indentGuidesStroke": "#3e4451",
-    "gitDecoration.untrackedResourceBackground": "#00FF0020",
-    "explorerGitDecoration.untrackedResourceBackground": "#00FF0020"
+    "explorerGitDecoration.untrackedResourceForeground": "#8BC34A",
+    "explorerGitDecoration.addedResourceForeground": "#66BB6A"
   }
 }

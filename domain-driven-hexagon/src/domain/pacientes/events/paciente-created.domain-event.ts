@@ -1,5 +1,5 @@
 import { DomainEvent, DomainEventProps } from '@src/shared/ddd';
-import { Sexo } from '../paciente.types';
+import { Sexo } from '../types';
 
 export class PacienteCreatedDomainEvent extends DomainEvent {
   readonly nombre: string;

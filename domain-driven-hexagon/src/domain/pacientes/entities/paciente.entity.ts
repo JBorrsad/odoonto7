@@ -13,6 +13,7 @@ import { PacienteDeletedDomainEvent } from '../events/paciente-deleted.domain-ev
 import { PacienteInvalidPregnancyError } from '../errors/paciente-invalid-pregnancy.error';
 import { Address, AddressProps } from '../value-objects/address.value-object';
 import {
+  PacienteProps,
   CreatePacienteProps,
   UpdatePacienteAddressProps,
   UpdatePacienteContactoProps,
@@ -34,6 +35,7 @@ export class PacienteEntity extends AggregateRoot<PacienteProps> {
     const id = randomUUID();
     const props: PacienteProps = {
       ...create,
+      address: new Address(create.address),
       embarazada: create.sexo === Sexo.MUJER ? create.embarazada : undefined,
     };
     const paciente = new PacienteEntity({ id, props });

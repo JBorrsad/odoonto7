@@ -3,9 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { AgregarTratamientoCommand } from './agregar-tratamiento.command';
 import { OdontogramaRepositoryPort } from '@src/infrastructure/database/odontograma/odontograma.repository.port';
 import { ODONTOGRAMA_REPOSITORY } from '@src/config/modules/odontograma.di-tokens';
-import { CaraDiente, TipoTratamiento } from '@src/domain/odontograma/odontograma.types';
-import { Tratamiento } from '@src/domain/odontograma/value-objects/tratamiento.value-object';
-import { OdontogramaNotFoundError } from '@src/domain/odontograma/odontograma.errors';
+import { CaraDiente, TipoTratamiento, OdontogramaNotFoundError } from '@src/domain/odontogramas';
 
 @Injectable()
 @CommandHandler(AgregarTratamientoCommand)
@@ -26,17 +24,13 @@ export class AgregarTratamientoService
       throw new OdontogramaNotFoundError();
     }
 
-    const tratamiento = Tratamiento.create({
-      tipo: command.tipo as TipoTratamiento,
-      descripcion: command.descripcion,
-    });
-
     odontograma.agregarTratamiento(
       command.numeroDiente,
       command.cara as CaraDiente,
-      tratamiento,
+      command.tipo as TipoTratamiento,
+      command.descripcion,
     );
 
-    await this.odontogramaRepository.save(odontograma);
+    await this.odontogramaRepository.insert(odontograma);
   }
 } 

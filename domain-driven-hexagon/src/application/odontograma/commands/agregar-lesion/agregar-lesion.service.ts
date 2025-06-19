@@ -3,7 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { AgregarLesionCommand } from './agregar-lesion.command';
 import { OdontogramaRepositoryPort } from '@src/infrastructure/database/odontograma/odontograma.repository.port';
-import { OdontogramaNotFoundError } from '@src/domain/odontograma/odontograma.errors';
+import { OdontogramaNotFoundError } from '@src/domain/odontogramas';
 import { ODONTOGRAMA_REPOSITORY } from '@src/config/modules/odontograma.di-tokens';
 
 @CommandHandler(AgregarLesionCommand)
@@ -14,11 +14,13 @@ export class AgregarLesionService implements ICommandHandler<AgregarLesionComman
   ) {}
 
   async execute(command: AgregarLesionCommand): Promise<Result<void, OdontogramaNotFoundError>> {
-    const odontograma = await this.odontogramaRepository.findById(command.odontogramaId);
+    const odontogramaResult = await this.odontogramaRepository.findOneById(command.odontogramaId);
     
-    if (!odontograma) {
+    if (odontogramaResult.isNone()) {
       return Err(new OdontogramaNotFoundError());
     }
+    
+    const odontograma = odontogramaResult.unwrap();
 
     odontograma.agregarLesion(
       command.numeroDiente,
@@ -27,7 +29,7 @@ export class AgregarLesionService implements ICommandHandler<AgregarLesionComman
       command.descripcion,
     );
 
-    await this.odontogramaRepository.update(odontograma);
+    await this.odontogramaRepository.insert(odontograma);
 
     return Ok(undefined);
   }

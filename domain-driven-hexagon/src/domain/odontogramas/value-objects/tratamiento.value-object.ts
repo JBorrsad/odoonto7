@@ -1,5 +1,5 @@
 import { ValueObject } from '@src/shared/ddd';
-import { TipoTratamiento } from '../odontograma.types';
+import { TipoTratamiento } from '../types';
 
 export interface TratamientoProps {
   id: string;

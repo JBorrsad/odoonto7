@@ -2,9 +2,8 @@ import { Inject } from '@nestjs/common';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { CreateOdontogramaCommand } from './create-odontograma.command';
-import { OdontogramaEntity } from '@src/domain/odontograma/odontograma.entity';
+import { OdontogramaEntity, OdontogramaAlreadyExistsError } from '@src/domain/odontogramas';
 import { OdontogramaRepositoryPort } from '@src/infrastructure/database/odontograma/odontograma.repository.port';
-import { OdontogramaAlreadyExistsError } from '@src/domain/odontograma/odontograma.errors';
 import { ODONTOGRAMA_REPOSITORY } from '@src/config/modules/odontograma.di-tokens';
 
 @CommandHandler(CreateOdontogramaCommand)
@@ -15,9 +14,9 @@ export class CreateOdontogramaService implements ICommandHandler<CreateOdontogra
   ) {}
 
   async execute(command: CreateOdontogramaCommand): Promise<Result<string, OdontogramaAlreadyExistsError>> {
-    const existingOdontograma = await this.odontogramaRepository.findById(command.pacienteId);
+    const existingOdontogramaResult = await this.odontogramaRepository.findOneById(command.pacienteId);
     
-    if (existingOdontograma) {
+    if (existingOdontogramaResult.isSome()) {
       return Err(new OdontogramaAlreadyExistsError());
     }
 

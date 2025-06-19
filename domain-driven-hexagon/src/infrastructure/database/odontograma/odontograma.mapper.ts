@@ -1,13 +1,13 @@
 import { Mapper } from '@src/shared/ddd';
-import { OdontogramaEntity } from '@src/domain/odontograma/odontograma.entity';
 import {
+  OdontogramaEntity,
   TipoDentadura,
   CaraDiente,
-} from '@src/domain/odontograma/odontograma.types';
-import { Diente } from '@src/domain/odontograma/value-objects/diente.value-object';
-import { EstadoCara } from '@src/domain/odontograma/value-objects/estado-cara.value-object';
-import { Lesion } from '@src/domain/odontograma/value-objects/lesion.value-object';
-import { Tratamiento } from '@src/domain/odontograma/value-objects/tratamiento.value-object';
+  Diente,
+  EstadoCara,
+  Lesion,
+  Tratamiento
+} from '@src/domain/odontogramas';
 import { OdontogramaResponseDto } from '@src/presentation/http/odontograma/dtos/odontograma.response.dto';
 import { Injectable } from '@nestjs/common';
 import { OdontogramaModel } from './odontograma.repository';

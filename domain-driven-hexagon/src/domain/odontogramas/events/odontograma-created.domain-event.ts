@@ -1,5 +1,5 @@
 import { DomainEvent, DomainEventProps } from '@src/shared/ddd';
-import { TipoDentadura } from '../odontograma.types';
+import { TipoDentadura } from '../types';
 
 export class OdontogramaCreatedDomainEvent extends DomainEvent {
   readonly tipoDentadura: TipoDentadura;

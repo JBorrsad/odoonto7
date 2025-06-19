@@ -13,7 +13,7 @@ import {
   IsBoolean,
   IsOptional,
 } from 'class-validator';
-import { Sexo } from '@src/domain/paciente/paciente.types';
+import { Sexo } from '@src/domain/pacientes';
 
 export class CreatePacienteRequestDto {
   @ApiProperty({ example: 'Juan', description: 'Nombre del paciente' })

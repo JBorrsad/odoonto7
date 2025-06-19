@@ -1,5 +1,5 @@
 import { Command, CommandProps } from '@src/shared/ddd';
-import { TipoDentadura } from '@src/domain/odontograma/odontograma.types';
+import { TipoDentadura } from '@src/domain/odontogramas';
 
 export class CreateOdontogramaCommand extends Command {
   readonly pacienteId: string;
