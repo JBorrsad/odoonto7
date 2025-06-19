@@ -1,0 +1,26 @@
+config:
+  target: http://localhost:3001/api/v1
+  phases:
+    - duration: 2
+      arrivalRate: 100
+  plugins:
+    faker:
+      locale: es
+  variables:
+    nombre: '$faker.name.firstName'
+    apellido: '$faker.name.lastName'
+    email: '$faker.internet.email'
+    telefono: '$faker.phone.phoneNumber'
+scenarios:
+  - flow:
+      - post:
+          url: '/pacientes'
+          json:
+            nombre: '{{ nombre }}'
+            apellido: '{{ apellido }}'
+            fechaNacimiento: '1990-05-15'
+            telefono: '{{ telefono }}'
+            email: '{{ email }}'
+            genero: 'masculino'
+            estadoCivil: 'soltero'
+            ocupacion: 'ingeniero' 

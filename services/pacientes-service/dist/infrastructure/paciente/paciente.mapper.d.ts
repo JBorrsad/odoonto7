@@ -1,5 +1,5 @@
 import { Mapper } from '@odoonto7/shared';
-import { PacienteModel } from './paciente.repository';
+import { PacienteModel } from './paciente.schema';
 import { PacienteEntity } from '../../domain/paciente';
 import { PacienteResponseDto } from '../../presentation/http/dtos/paciente.response.dto';
 export declare class PacienteMapper implements Mapper<PacienteEntity, PacienteModel, PacienteResponseDto> {

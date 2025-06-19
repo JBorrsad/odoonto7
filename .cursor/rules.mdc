@@ -1,3 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
 # REGLAS CRÍTICAS PARA EL DESARROLLO DE LA APLICACIÓN
 
 ## PROCESO OBLIGATORIO ANTES DE CUALQUIER CAMBIO

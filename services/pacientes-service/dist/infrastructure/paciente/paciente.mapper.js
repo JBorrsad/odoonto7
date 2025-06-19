@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PacienteMapper = void 0;
-const paciente_repository_1 = require("./paciente.repository");
+const paciente_schema_1 = require("./paciente.schema");
 const paciente_1 = require("../../domain/paciente");
 const paciente_response_dto_1 = require("../../presentation/http/dtos/paciente.response.dto");
 const common_1 = require("@nestjs/common");
@@ -34,7 +34,7 @@ let PacienteMapper = class PacienteMapper {
             postalCode: copy.address.postalCode,
             street: copy.address.street,
         };
-        return paciente_repository_1.pacienteSchema.parse(record);
+        return paciente_schema_1.pacienteSchema.parse(record);
     }
     toDomain(record) {
         const entity = new paciente_1.PacienteEntity({

@@ -1,0 +1,16 @@
+config:
+  target: http://localhost:3002/api/v1
+  phases:
+    - duration: 2
+      arrivalRate: 50
+  plugins:
+    faker:
+      locale: es
+  variables:
+    pacienteId: '$faker.random.uuid'
+scenarios:
+  - flow:
+      - post:
+          url: '/odontogramas'
+          json:
+            pacienteId: '{{ pacienteId }}' 
