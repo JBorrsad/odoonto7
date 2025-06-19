@@ -1,0 +1,12 @@
+import { Command, CommandProps } from '@odoonto7/shared';
+
+export class UpdatePacienteHemorragiasCommand extends Command {
+  readonly pacienteId: string;
+  readonly hemorragiasDentales: boolean;
+
+  constructor(props: CommandProps<UpdatePacienteHemorragiasCommand>) {
+    super(props);
+    this.pacienteId = props.pacienteId;
+    this.hemorragiasDentales = props.hemorragiasDentales;
+  }
+} 

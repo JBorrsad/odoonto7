@@ -3,7 +3,7 @@ import { CommandBus } from '@nestjs/cqrs';
 import { CreateUserCommand } from '@src/application/user/commands/create-user/create-user.command';
 import { CreateUserGqlRequestDto } from './dtos/create-user.gql-request.dto';
 import { IdGqlResponse } from './dtos/id.gql-response.dto';
-import { AggregateID } from '@src/shared/ddd';
+import { AggregateID } from '@odoonto7/shared';
 import { UserAlreadyExistsError } from '@src/domain/user/user.errors';
 import { Result } from 'oxide.ts';
 

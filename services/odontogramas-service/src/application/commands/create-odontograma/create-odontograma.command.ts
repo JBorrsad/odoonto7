@@ -1,0 +1,13 @@
+import { Command, CommandProps } from '@odoonto7/shared';
+import { TipoDentadura } from '@src/domain/odontogramas';
+
+export class CreateOdontogramaCommand extends Command {
+  readonly pacienteId: string;
+  readonly tipoDentadura: TipoDentadura;
+
+  constructor(props: CommandProps<CreateOdontogramaCommand>) {
+    super(props);
+    this.pacienteId = props.pacienteId;
+    this.tipoDentadura = props.tipoDentadura;
+  }
+} 

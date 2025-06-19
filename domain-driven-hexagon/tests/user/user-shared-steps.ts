@@ -1,4 +1,4 @@
-import { Mutable } from '@src/shared/types';
+import { Mutable } from '@odoonto7/shared';
 import { CreateUserRequestDto } from '@src/presentation/http/user/commands/create-user.request.dto';
 import { DefineStepFunction } from 'jest-cucumber';
 import { TestContext } from 'tests/test-utils/TestContext';

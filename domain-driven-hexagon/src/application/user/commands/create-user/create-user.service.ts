@@ -4,9 +4,9 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Err, Ok, Result } from 'oxide.ts';
 import { CreateUserCommand } from './create-user.command';
 import { UserAlreadyExistsError } from '@src/domain/user/user.errors';
-import { AggregateID } from '@src/shared/ddd';
+import { AggregateID } from '@odoonto7/shared';
 import { UserEntity } from '@src/domain/user/user.entity';
-import { ConflictException } from '@src/shared/exceptions';
+import { ConflictException } from '@odoonto7/shared';
 import { Inject } from '@nestjs/common';
 import { USER_REPOSITORY } from '@src/config/modules/user.di-tokens';
 

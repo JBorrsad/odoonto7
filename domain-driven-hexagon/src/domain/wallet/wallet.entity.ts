@@ -1,5 +1,5 @@
-import { AggregateID, AggregateRoot } from '@src/shared/ddd';
-import { ArgumentOutOfRangeException } from '@src/shared/exceptions';
+import { AggregateID, AggregateRoot } from '@odoonto7/shared';
+import { ArgumentOutOfRangeException } from '@odoonto7/shared';
 import { Err, Ok, Result } from 'oxide.ts';
 import { WalletCreatedDomainEvent } from './events/wallet-created.domain-event';
 import { WalletNotEnoughBalanceError } from './wallet.errors';

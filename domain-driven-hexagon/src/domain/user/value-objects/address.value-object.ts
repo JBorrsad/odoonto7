@@ -1,6 +1,6 @@
-import { ValueObject } from '@src/shared/ddd';
-import { Guard } from '@src/shared/guard';
-import { ArgumentOutOfRangeException } from '@src/shared/exceptions';
+import { ValueObject } from '@odoonto7/shared';
+import { Guard } from '@odoonto7/shared';
+import { ArgumentOutOfRangeException } from '@odoonto7/shared';
 
 /** Note:
  * Value Objects with multiple properties can contain
@@ -14,6 +14,10 @@ export interface AddressProps {
 }
 
 export class Address extends ValueObject<AddressProps> {
+  constructor(props: AddressProps) {
+    super(props);
+  }
+
   get country(): string {
     return this.props.country;
   }

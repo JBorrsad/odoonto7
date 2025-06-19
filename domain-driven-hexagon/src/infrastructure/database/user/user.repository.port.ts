@@ -1,4 +1,4 @@
-import { PaginatedQueryParams, RepositoryPort } from '@src/shared/ddd';
+import { PaginatedQueryParams, RepositoryPort } from '@odoonto7/shared';
 import { UserEntity } from '@src/domain/user/user.entity';
 
 export interface FindUsersParams extends PaginatedQueryParams {

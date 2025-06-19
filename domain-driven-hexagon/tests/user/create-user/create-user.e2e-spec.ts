@@ -3,7 +3,7 @@ import { getConnectionPool } from '../../setup/jestSetupAfterEnv';
 import { UserResponseDto } from '@src/presentation/http/user/dtos/user.response.dto';
 import { DatabasePool, sql } from 'slonik';
 import { TestContext } from '@tests/test-utils/TestContext';
-import { IdResponse } from '@src/shared/api/id.response.dto';
+import { IdResponse } from '@odoonto7/shared';
 import {
   CreateUserTestContext,
   givenUserProfileData,

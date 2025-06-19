@@ -5,11 +5,11 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Result } from 'oxide.ts';
 import { FindUsersRequestDto } from '@src/presentation/http/user/queries/find-users.request.dto';
 import { FindUsersQuery } from '@src/application/user/queries/find-users/find-users.query-handler';
-import { Paginated } from '@src/shared/ddd';
+import { Paginated } from '@odoonto7/shared';
 import { UserPaginatedResponseDto } from '@src/presentation/http/user/dtos/user.paginated.response.dto';
-import { PaginatedQueryRequestDto } from '@src/shared/api/paginated-query.request.dto';
+import { PaginatedQueryRequestDto } from '@odoonto7/shared';
 import { UserModel } from '@src/infrastructure/database/user/user.repository';
-import { ResponseBase } from '@src/shared/api/response.base';
+import { ResponseBase } from '@odoonto7/shared';
 
 @Controller(routesV1.version)
 export class FindUsersHttpController {

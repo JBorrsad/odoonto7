@@ -1,4 +1,4 @@
-import { ExceptionBase } from '@src/shared/exceptions';
+import { ExceptionBase } from '@odoonto7/shared';
 
 export class WalletNotEnoughBalanceError extends ExceptionBase {
   static readonly message = 'Wallet has not enough balance';

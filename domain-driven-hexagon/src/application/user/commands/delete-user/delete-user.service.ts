@@ -1,4 +1,4 @@
-import { NotFoundException } from '@src/shared/exceptions';
+import { NotFoundException } from '@odoonto7/shared';
 import { UserRepositoryPort } from '@src/infrastructure/database/user/user.repository.port';
 import { Inject } from '@nestjs/common';
 import { CommandHandler } from '@nestjs/cqrs';

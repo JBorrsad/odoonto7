@@ -3,7 +3,7 @@ import { MessagePattern } from '@nestjs/microservices';
 import { CommandBus } from '@nestjs/cqrs';
 import { CreateUserCommand } from '@src/application/user/commands/create-user/create-user.command';
 import { CreateUserRequestDto } from '@src/presentation/http/user/commands/create-user.request.dto';
-import { IdResponse } from '@src/shared/api/id.response.dto';
+import { IdResponse } from '@odoonto7/shared';
 
 @Controller()
 export class CreateUserMessageController {

@@ -1,4 +1,4 @@
-import { Mapper } from '@src/shared/ddd';
+import { Mapper } from '@odoonto7/shared';
 import { UserModel, userSchema } from './user.repository';
 import { Address } from '@src/domain/user/value-objects/address.value-object';
 import { UserEntity } from '@src/domain/user/user.entity';

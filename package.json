@@ -1,0 +1,14 @@
+{
+  "name": "odoonto7-monorepo",
+  "version": "1.0.0",
+  "description": "Sistema odontológico con arquitectura de microservicios",
+  "workspaces": [
+    "services/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "build:shared": "cd libs/shared && npm run build",
+    "build:all": "npm run build:shared && npm run build",
+    "start:dev": "npm run build:shared && nest start --watch"
+  }
+} 

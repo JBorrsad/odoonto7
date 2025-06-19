@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { PaginatedGraphqlResponse } from '@src/shared/api/graphql/paginated.graphql-response.base';
+import { PaginatedGraphqlResponse } from '@odoonto7/shared';
 
 import { UserGraphqlResponseDto } from './user.graphql-response.dto';
 
@@ -9,4 +9,8 @@ export class UserPaginatedGraphqlResponseDto extends PaginatedGraphqlResponse(
 ) {
   @Field(() => [UserGraphqlResponseDto])
   data: UserGraphqlResponseDto[];
+
+  constructor(props: { data: UserGraphqlResponseDto[]; count: number; limit: number; page: number }) {
+    super(props);
+  }
 }

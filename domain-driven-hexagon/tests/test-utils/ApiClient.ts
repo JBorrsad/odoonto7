@@ -1,5 +1,5 @@
 import { routesV1 } from '@src/config/app.routes';
-import { IdResponse } from '@src/shared/api/id.response.dto';
+import { IdResponse } from '@odoonto7/shared';
 import { CreateUserRequestDto } from '@src/presentation/http/user/commands/create-user.request.dto';
 import { UserPaginatedResponseDto } from '@src/presentation/http/user/dtos/user.paginated.response.dto';
 import { getHttpServer } from '@tests/setup/jestSetupAfterEnv';

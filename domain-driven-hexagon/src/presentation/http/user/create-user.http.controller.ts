@@ -12,9 +12,9 @@ import { match, Result } from 'oxide.ts';
 import { CreateUserCommand } from '@src/application/user/commands/create-user/create-user.command';
 import { CreateUserRequestDto } from '@src/presentation/http/user/commands/create-user.request.dto';
 import { UserAlreadyExistsError } from '@src/domain/user/user.errors';
-import { IdResponse } from '@src/shared/api/id.response.dto';
-import { AggregateID } from '@src/shared/ddd';
-import { ApiErrorResponse } from '@src/shared/api/api-error.response';
+import { IdResponse } from '@odoonto7/shared';
+import { AggregateID } from '@odoonto7/shared';
+import { ApiErrorResponse } from '@odoonto7/shared';
 
 @Controller(routesV1.version)
 export class CreateUserHttpController {

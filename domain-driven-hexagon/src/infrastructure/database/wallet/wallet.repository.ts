@@ -1,7 +1,7 @@
 import { InjectPool } from 'nestjs-slonik';
 import { DatabasePool } from 'slonik';
 import { z } from 'zod';
-import { SqlRepositoryBase } from '@src/shared/db/sql-repository.base';
+import { SqlRepositoryBase } from '@odoonto7/shared';
 import { WalletRepositoryPort } from './wallet.repository.port';
 import { WalletEntity } from '@src/domain/wallet/wallet.entity';
 import { WalletMapper } from './wallet.mapper';

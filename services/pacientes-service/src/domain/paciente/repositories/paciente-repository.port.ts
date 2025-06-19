@@ -1,0 +1,6 @@
+import { RepositoryPort } from '@odoonto7/shared';
+import { PacienteEntity } from '../entities/paciente.entity';
+
+export interface PacienteRepositoryPort extends RepositoryPort<PacienteEntity> {
+  findByEmail(email: string): Promise<PacienteEntity | null>;
+} 

@@ -4,11 +4,11 @@ import { SlonikModule } from 'nestjs-slonik';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { UserModule } from '@src/config/modules/user.module';
 import { WalletModule } from '@src/config/modules/wallet.module';
-import { PacienteModule } from '@src/config/modules/paciente.module';
+
 import { RequestContextModule } from 'nestjs-request-context';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { ContextInterceptor } from '@src/shared/application/context/ContextInterceptor';
-import { ExceptionInterceptor } from '@src/shared/application/interceptors/exception.interceptor';
+import { ContextInterceptor } from '@odoonto7/shared/application/context/ContextInterceptor';
+import { ExceptionInterceptor } from '@odoonto7/shared/application/interceptors/exception.interceptor';
 import { postgresConnectionUri } from '@src/config/database.config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
@@ -40,7 +40,6 @@ const interceptors = [
     // Modules
     UserModule,
     WalletModule,
-    PacienteModule,
   ],
   controllers: [],
   providers: [...interceptors],

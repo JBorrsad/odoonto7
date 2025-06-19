@@ -1,4 +1,4 @@
-import { Mapper } from '@src/shared/ddd';
+import { Mapper } from '@odoonto7/shared';
 import { Injectable } from '@nestjs/common';
 import { WalletEntity } from '@src/domain/wallet/wallet.entity';
 import { WalletModel, walletSchema } from './wallet.repository';

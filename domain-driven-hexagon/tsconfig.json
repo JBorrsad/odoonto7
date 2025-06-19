@@ -22,7 +22,9 @@
     "paths": {
       "@src/*": ["src/*"],
       "@config/*": ["src/config/*"],
-      "@tests/*": ["tests/*"]
+      "@tests/*": ["tests/*"],
+      "@odoonto7/shared": ["libs/shared"],
+      "@odoonto7/shared/*": ["libs/shared/*"]
     }
   }
 }

@@ -1,4 +1,4 @@
-import { AggregateRoot, AggregateID } from '@src/shared/ddd';
+import { AggregateRoot, AggregateID } from '@odoonto7/shared';
 import { UserCreatedDomainEvent } from './events/user-created.domain-event';
 import { Address, AddressProps } from './value-objects/address.value-object';
 import {

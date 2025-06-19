@@ -1,4 +1,4 @@
-import { ExceptionBase } from '@src/shared/exceptions';
+import { ExceptionBase } from '@odoonto7/shared';
 
 export class UserAlreadyExistsError extends ExceptionBase {
   static readonly message = 'User already exists';

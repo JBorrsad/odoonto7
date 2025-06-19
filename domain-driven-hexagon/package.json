@@ -8,7 +8,6 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -45,6 +44,7 @@
     "@nestjs/microservices": "^11.1.3",
     "@nestjs/platform-express": "^11.1.3",
     "@nestjs/swagger": "^11.2.0",
+    "@odoonto7/shared": "file:../libs/shared",
     "@slonik/migrator": "^0.11.3",
     "apollo-server-core": "^3.10.2",
     "apollo-server-express": "^3.10.2",
